@@ -1,0 +1,1135 @@
+{% extends "web/base.html" %}
+{% load static %}
+
+{% block content %}
+        <!-- Career Hero -->
+        <section class="hero-service-wrap hero-section-wrap hero-career-wrap">
+            <div class="hero-section-content-wrap">
+                <img src="{% static 'assets/imgs/bg-shape-1.svg' %} " alt="Shape" class="animation-slide-left bg-shape" />
+                <div class="custom-container">
+                    <div class="hero-portfolio-body">
+                        <div class="hero-section-content text-center">
+                            <h5 class="section-subtitle">Career</h5>
+                            <h1 class="section-title fade-in">You have great opportunities</h1>
+                            <p>If you are a talented and ambitious individual looking to make a mark in your career,
+                                we invite you to explore our career opportunities.</p>
+                            <a href="{% url "web:contact" %}" class="theme-btn">Enroll now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Service Area -->
+        <section class="service-area service-black-area">
+            <div class="container">
+                <div class="service-section-header section-header d-flex align-items-end justify-content-between">
+                    <div class="left">
+                        <h5 class="section-subtitle">What we do</h5>
+                        <h1 class="section-title">Dealing in all professional <br>IT services.</h1>
+                    </div>
+                    <p>At Semester Tech, we specialize in delivering comprehensive IT services tailored to your business
+                        needs. From infrastructure management to cutting-edge innovations, we provide end-to-end
+                        solutions to drive your success in the digital world.</p>
+                </div>
+                <div class="case-studio-area mt-0 pt-0" style="background: none;">
+                    <div class="case-studio">
+
+                        <ul class="nav nav-pills case-studio-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <button class="nav-link active" id="development-tab" data-bs-toggle="tab"
+                                    href="#development" role="tab" aria-controls="development"
+                                    aria-selected="true">Web Development</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="development-tab" data-bs-toggle="tab"
+                                    href="#mobile" role="tab" aria-controls="development" aria-selected="false"
+                                    >Mobile Application</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="woo_commerce-tab" data-bs-toggle="tab" href="#woo_commerce"
+                                    role="tab" aria-controls="woo_commerce" aria-selected="false">Data Science</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="crm_solutions-tab" data-bs-toggle="tab"
+                                    href="#crm_solutions" role="tab" aria-controls="crm_solutions"
+                                    aria-selected="false">Cyber Security</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="web_designing-tab" data-bs-toggle="tab"
+                                    href="#web_designing" role="tab" aria-controls="web_designing"
+                                    aria-selected="false">Robotics</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="it_support-tab" data-bs-toggle="tab" href="#it_support"
+                                    role="tab" aria-controls="it_support" aria-selected="false">Management</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content case-studio-tab-content">
+                            <div class="tab-pane fade show active" id="development" role="tabpanel"
+                                aria-labelledby="development-tab">
+                                <div class="case-studio-body d-flex flex-row flex-lg-column">
+                                    <div class="row row-cols-md-4 g-2">
+                                        <div class="col">
+                                            <div class="career-box">
+                    
+                                                <h2>Web Design<span></span></h2>
+                                                <p>6 weeks</p>
+                                                <div class="career-time">
+                                                    <span><i class="las la-clock"></i> 3x per week</span>
+                                                    <span>100,000 </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="career-box">
+                                                <h2>UI/UX - <span>S.E</span></h2>
+                                                <p>6 weeks</p>
+                                                <div class="career-time">
+                                                    <span><i class="las la-clock"></i> 3x per week</span>
+                                                    <span>100,000</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="career-box">
+                                                <h2>Web Design/React - <span>S.E</span></h2>
+                                                <p>6 weeks</p>
+                                                <div class="career-time">
+                                                    <span><i class="las la-clock"></i>3x per week</span>
+                                                    <span>100,000</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="career-box">
+                                                <h2>Backend with python - <span>S.E</span></h2>
+                                                <p>6 weeks</p>
+                                                <div class="career-time">
+                                                    <span><i class="las la-clock"></i>3x per week</span>
+                                                    <span>150,000</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="career-box">
+                                                <h2>Backend with Flask - <span>S.E</span></h2>
+                                                <p>6 weeks</p>
+                                                <div class="career-time">
+                                                    <span><i class="las la-clock"></i>3x per week</span>
+                                                    <span>150,000</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="career-box">
+                                                <h2>Backend with Django - <span>S.E</span></h2>
+                                                <p>6 weeks</p>
+                                                <div class="career-time">
+                                                    <span><i class="las la-clock"></i>3x per week</span>
+                                                    <span>150,000</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="career-box">
+                                                <h2>API with API - <span>S.E</span></h2>
+                                                <p>6 weeks</p>
+                                                <div class="career-time">
+                                                    <span><i class="las la-clock"></i>3x per week</span>
+                                                    <span>150,000</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="career-box">
+                                                <h2>API with Django - <span>S.E</span></h2>
+                                                <p>6 weeks</p>
+                                                <div class="career-time">
+                                                    <span><i class="las la-clock"></i>3x per week</span>
+                                                    <span>150,000</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="career-box">
+                                                <h2>JavaScript(NEAM) - <span>S.E</span></h2>
+                                                <p>6 weeks</p>
+                                                <div class="career-time">
+                                                    <span><i class="las la-clock"></i>3x per week</span>
+                                                    <span>150,000</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="career-box">
+                                                <h2>Node Js/React - <span>S.E</span></h2>
+                                                <p>6 weeks</p>
+                                                <div class="career-time">
+                                                    <span><i class="las la-clock"></i>3x per week</span>
+                                                    <span>150,000</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="career-box">
+                                                <h2>API with Node JS - <span>S.E</span></h2>
+                                                <p>6 weeks</p>
+                                                <div class="career-time">
+                                                    <span><i class="las la-clock"></i>3x per week</span>
+                                                    <span>150,000</span>
+                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="career-box">
+                                                <h2>PHP - <span>S.E</span></h2>
+                                                <p>6 weeks</p>
+                                                <div class="career-time">
+                                                    <span><i class="las la-clock"></i>3x per week</span>
+                                                    <span>100,000</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="career-box">
+                                                <h2>PHP Laravel - <span>S.E</span></h2>
+                                                <p>6 weeks</p>
+                                                <div class="career-time">
+                                                    <span><i class="las la-clock"></i>3x per week</span>
+                                                    <span>100,000</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="career-box">
+                                                <h2>Rest API with Laravel - <span>S.E</span></h2>
+                                                <p>6 weeks</p>
+                                                <div class="career-time">
+                                                    <span><i class="las la-clock"></i>3x per week</span>
+                                                    <span>100,000</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="career-box">
+                                                <h2>Python - <span>S.E</span></h2>
+                                                <p>12 weeks</p>
+                                                <div class="career-time">
+                                                    <span><i class="las la-clock"></i>3x per week</span>
+                                                    <span>250,000</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="career-box">
+                                                <h2>Django/Flask/Javascipt - <span>S.E</span></h2>
+                                                <p>12 weeks</p>
+                                                <div class="career-time">
+                                                    <span><i class="las la-clock"></i>3x per week</span>
+                                                    <span>250,000</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="career-box">
+                                                <h2>React JS/PHP/Laravel - <span>S.E</span></h2>
+                                                <p>6 weeks</p>
+                                                <div class="career-time">
+                                                    <span><i class="las la-clock"></i>3x per week</span>
+                                                    <span>250,000</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="woo_commerce" role="tabpanel"
+                                aria-labelledby="woo_commerce-tab">
+                                <div class="case-studio-body d-flex">
+                                    <div class="left d-flex flex-1">
+                                        <div class="row row-cols-1 row-cols-lg-2 g-3">
+                                            <div class="col">
+                                                <div class="service-card simple-shadow">
+                                                    <h3><a href="{% url "web:services" %}">Data Analysis</a></h3>
+                                                    <p>Excel, Power BI, and SQL.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="service-card simple-shadow">
+                                                    <h3><a href="{% url "web:services" %}">Data Analysis with
+                                                            Python</a>
+                                                    </h3>
+                                                    <p>Python libraries like Pandas, NumPy, and Matplotlib.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="service-card simple-shadow">
+                                                    <h3><a href="{% url "web:services" %}">Data Science and Machine
+                                                            Learning</a>
+                                                    </h3>
+                                                    <p>predictive modeling, supervised/unsupervised learning, and AI
+                                                        algorithms.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="service-card simple-shadow">
+                                                    <h3><a href="{% url "web:services" %}">Artificial Intelligence</a>
+                                                    </h3>
+                                                    <p>deep learning, natural language processing (NLP), and computer
+                                                        vision.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <div class="case-studio-contents service-card card-h">
+                                            <img src="{% static 'assets/imgs/service-icon-2.svg' %} " alt="ICON" />
+                                            <h3>Data Science</h3>
+                                            <p>In our company, you will learn how to analyze, visualize,
+                                                and derive insights from data to drive decision-making
+                                                and innovation then also to Unlock the power of data
+                                                with our comprehensive Data Science programs.</p>
+                                            <!-- <a href="#" class="theme-btn">
+                            <i class="iconoir-arrow-up-right"></i>
+                        </a> -->
+                                            <a href="{% url "web:services" %}" class="theme-btn btn-sm "
+                                                style="width: auto;">
+                                                Enroll Now
+                                                <i class="iconoir-arrow-up-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="tab-pane fade" id="crm_solutions" role="tabpanel"
+                                aria-labelledby="crm_solutions-tab">
+                                <div class="case-studio-body d-flex">
+                                    <div class="left d-flex flex-1">
+                                        <div class="row row-cols-1 row-cols-lg-1 g-3">
+                                            <div class="col">
+                                                <div class="service-card simple-shadow">
+                                                    <h3><a href="{% url "web:services" %}">Cyber Security</a></h3>
+                                                    <p>cybersecurity frameworks, penetration testing,
+                                                        network administration, security tools and practices also python
+                                                        programming.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="service-card simple-shadow">
+                                                    <h3><a href="{% url "web:services" %}">Certified Ethical
+                                                            Hacking</a>
+                                                    </h3>
+                                                    <p>Footprint and reconnaissance, enumeration, vulnerability
+                                                        analysis,
+                                                        scanning networks, social Engineering,
+                                                        ethical hacking tools and practices.</p>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="col">
+                        <div class="service-card simple-shadow">
+                            <h3><a href="{% url "web:services" %}">E-Commerce Solution</a></h3>
+                            <p>We have a best team for your shopping websites.</p>
+                        </div>
+                        </div>
+                        <div class="col">
+                        <div class="service-card simple-shadow">
+                            <h3><a href="{% url "web:services" %}">E-Commerce Solution</a></h3>
+                            <p>We have a best team for your shopping websites.</p>
+                        </div>
+                        </div> -->
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <div class="case-studio-contents service-card card-h">
+                                            <img src="{% static 'assets/imgs/service-icon-3.svg' %} " alt="ICON" />
+                                            <h3>Cyber Security</h3>
+                                            <p>At Semester Integrated Technologies, we provide in-depth training on
+                                                network
+                                                security,
+                                                encryption, risk management, and cybersecurity frameworks also our
+                                                programs
+                                                prepare
+                                                you for roles such as Security Analyst, Network Security Engineer,
+                                                penetration tester, ethical hacker and Cyber Risk Consultant.</p>
+                                            <!-- <a href="#" class="theme-btn">
+                            <i class="iconoir-arrow-up-right"></i>
+                        </a> -->
+                                            <a href="{% url "web:services" %}" class="theme-btn btn-sm "
+                                                style="width: auto;">
+                                                Enroll Now
+                                                <i class="iconoir-arrow-up-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="web_designing" role="tabpanel"
+                                aria-labelledby="web_designing-tab">
+                                <div class="case-studio-body d-flex">
+                                    <div class="left d-flex flex-1">
+                                        <div class="row row-cols-1 row-cols-lg-2 g-3">
+                                            <div class="col">
+                                                <div class="service-card simple-shadow">
+                                                    <h3><a href="{% url "web:services" %}">Robotics</a></h3>
+                                                    <p>mechanical design, embedded programming, AI integration, and
+                                                        automation.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="service-card simple-shadow">
+                                                    <h3><a href="{% url "web:services" %}">Internet of Things (IOT)</a>
+                                                    </h3>
+                                                    <p>IOT protocols, sensor networks, cloud computing and data
+                                                        analytics.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="service-card simple-shadow">
+                                                    <h3><a href="{% url "web:services" %}">Embedded Systems</a></h3>
+                                                    <p>microcontroller programming, real-time operating systems (RTOS),
+                                                        circuit design, and firmware development.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="service-card simple-shadow">
+                                                    <h3><a href="{% url "web:services" %}">Smart Home Automation</a>
+                                                    </h3>
+                                                    <p>home automation protocols, IoT integration,
+                                                        AI-driven smart assistants, and wireless communication.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <div class="case-studio-contents service-card card-h">
+                                            <img src="{% static 'assets/imgs/service-icon-4.svg' %} " alt="ICON" />
+                                            <h3>Robotics</h3>
+                                            <p>At Semester Integrated Technologies, we shall equip you with the skills
+                                                to
+                                                design,
+                                                build, and program intelligent robotic systems. Also train you
+                                                mechanical
+                                                design, embedded programming, AI integration and
+                                                automation and prepare you for careers in industrial automation,
+                                                healthcare
+                                                robotics, drone technology,
+                                                and AI-driven robotics solutions.</p>
+                                            <!-- <a href="#" class="theme-btn">
+                            <i class="iconoir-arrow-up-right"></i>
+                        </a> -->
+                                            <a href="{% url "web:services" %}" class="theme-btn btn-sm "
+                                                style="width: auto;">
+                                                Enroll Now
+                                                <i class="iconoir-arrow-up-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="it_support" role="tabpanel" aria-labelledby="it_support-tab">
+                                <div class="case-studio-body d-flex">
+                                    <div class="left d-flex flex-1">
+                                        <div class="row row-cols-1 row-cols-lg-2 g-3">
+                                            <div class="col">
+                                                <div class="service-card simple-shadow">
+                                                    <h3><a href="{% url "web:services" %}">Digital Marketing and
+                                                            Branding</a>
+                                                    </h3>
+                                                    <p>SEO, social media marketing, content strategy,
+                                                        paid advertising, and brand storytelling.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="service-card simple-shadow">
+                                                    <h3><a href="{% url "web:services" %}">Product Design</a></h3>
+                                                    <p>UI/UX principles, wireframing, prototyping and human-computer
+                                                        interaction also
+                                                        tools like Figma, Adobe XD, and Sketch.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="service-card simple-shadow">
+                                                    <h3><a href="{% url "web:services" %}">Product Management</a></h3>
+                                                    <p>Product roadmaps, conduct market research, define features, and
+                                                        oversee product lifecycles.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="service-card simple-shadow">
+                                                    <h3><a href="{% url "web:services" %}">Project Management</a></h3>
+                                                    <p>Agile, Scrum, PMP, and PRINCE2 methodologies.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <div class="case-studio-contents service-card card-h">
+                                            <img src="{% static 'assets/imgs/service-icon-5.svg' %} " alt="ICON" />
+                                            <h3>Management</h3>
+                                            <p>At Semester Integrated Technologies,you will take your organization to
+                                                the
+                                                level
+                                                with our comprehensive management program from elevating your Online
+                                                presence and crafting
+                                                user-centered digital experiences, to developing successful products and
+                                                delivering Projects
+                                                efficiently, our expert-led training equip you with the skills to drive
+                                                business growth and achieve success.</p>
+                                            <a href="#" class="theme-btn">
+                                                <i class="iconoir-arrow-up-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+    
+    
+                    <div class="row row-cols-4 g-2">
+                        
+                    <div class="col">
+                        <div class="career-box">
+                            <h2>Java(Android) - <span>S.E</span></h2>
+                            <p>12 weeks</p>
+                            <div class="career-time">
+                                <span><i class="las la-clock"></i>3x per week</span>
+                                <span>250,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="career-box">
+                            <h2>Java(Kotin) - <span>S.E</span></h2>
+                            <p>12 weeks</p>
+                            <div class="career-time">
+                                <span><i class="las la-clock"></i>3x per week</span>
+                                <span>250,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="career-box">
+                            <h2>Swift(IOS) - <span>S.E</span></h2>
+                            <p>12 weeks</p>
+                            <div class="career-time">
+                                <span><i class="las la-clock"></i>3x per week</span>
+                                <span>250,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="career-box">
+                            <h2>Hybrid Flutter(Python) - <span>S.E</span></h2>
+                            <p>12 weeks</p>
+                            <div class="career-time">
+                                <span><i class="las la-clock"></i>3x per week</span>
+                                <span>250,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="career-box">
+                            <h2>Flutter(JS) - <span>S.E</span></h2>
+                            <p>12 weeks</p>
+                            <div class="career-time">
+                                <span><i class="las la-clock"></i>3x per week</span>
+                                <span>250,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="career-box">
+                            <h2>Data Analytics - <span>Database</span></h2>
+                            <p>6 weeks</p>
+                            <div class="career-time">
+                                <span><i class="las la-clock"></i>3x per week</span>
+                                <span>100,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="career-box">
+                            <h2>Data Analytics with Python - <span>Database</span></h2>
+                            <p>12 weeks</p>
+                            <div class="career-time">
+                                <span><i class="las la-clock"></i>3x per week</span>
+                                <span>200,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="career-box">
+                            <h2>Data Science - <span>Database</span></h2>
+                            <p>12 weeks</p>
+                            <div class="career-time">
+                                <span><i class="las la-clock"></i>3x per week</span>
+                                <span>200,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="career-box">
+                            <h2>Machine Learning - <span>Database</span></h2>
+                            <p>12 weeks</p>
+                            <div class="career-time">
+                                <span><i class="las la-clock"></i>3x per week</span>
+                                <span>200,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="career-box">
+                            <h2>DBMS - <span>Database</span></h2>
+                            <p>6 weeks</p>
+                            <div class="career-time">
+                                <span><i class="las la-clock"></i>3x per week</span>
+                                <span>100,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="career-box">
+                            <h2>Artifical Intelligence<span></span></h2>
+                            <p>12 weeks</p>
+                            <div class="career-time">
+                                <span><i class="las la-clock"></i>3x per week</span>
+                                <span>200,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="career-box">
+                            <h2>Cyber Security<span></span></h2>
+                            <p>8 weeks</p>
+                            <div class="career-time">
+                                <span><i class="las la-clock"></i>3x per week</span>
+                                <span>150,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="career-box">
+                            <h2>Cyber Security with Ethical Hacking<span></span></h2>
+                            <p>12 weeks</p>
+                            <div class="career-time">
+                                <span><i class="las la-clock"></i>3x per week</span>
+                                <span>250,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="career-box">
+                            <h2>Robotics & IOT - <span>Automation</span></h2>
+                            <p>8 weeks</p>
+                            <div class="career-time">
+                                <span><i class="las la-clock"></i>3x per week</span>
+                                <span>150,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="career-box">
+                            <h2>Drone Technology - <span>Automation</span></h2>
+                            <p>12 weeks</p>
+                            <div class="career-time">
+                                <span><i class="las la-clock"></i>3x per week</span>
+                                <span>250,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="career-box">
+                            <h2>Project Management - <span>Management</span></h2>
+                            <p>12 weeks</p>
+                            <div class="career-time">
+                                <span><i class="las la-clock"></i>3x per week</span>
+                                <span>100,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="career-box">
+                            <h2>Product Design - <span>Management</span></h2>
+                            <p>12 weeks</p>
+                            <div class="career-time">
+                                <span><i class="las la-clock"></i>3x per week</span>
+                                <span>50,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="career-box">
+                            <h2>ICT Essentials<span></span></h2>
+                            <p>4 weeks</p>
+                            <div class="career-time">
+                                <span><i class="las la-clock"></i>3x per week</span>
+                                <span>50,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="career-box">
+                            <h2>Cloud Computing<span></span></h2>
+                            <p>8 weeks</p>
+                            <div class="career-time">
+                                <span><i class="las la-clock"></i>3x per week</span>
+                                <span>150,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        </section>
+
+        <!-- Case Studio -->
+        <section class="case-studio-area bg-dark">
+            <div class="custom-container">
+                <div class="case-studio-header text-center">
+                    <h5 class="section-subtitle">TRAIN WITH US</h5>
+                    <h1 class="section-title">Our Course Career Paths</h1>
+                </div>
+
+
+                <div class="case-studio">
+
+                    <ul class="nav nav-pills case-studio-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <button class="nav-link active" id="development-tab" data-bs-toggle="tab"
+                                href="#development" role="tab" aria-controls="development" aria-selected="true">Software
+                                Development</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" id="woo_commerce-tab" data-bs-toggle="tab" href="#woo_commerce"
+                                role="tab" aria-controls="woo_commerce" aria-selected="false">Data Science</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" id="crm_solutions-tab" data-bs-toggle="tab" href="#crm_solutions"
+                                role="tab" aria-controls="crm_solutions" aria-selected="false">Cyber Security</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" id="web_designing-tab" data-bs-toggle="tab" href="#web_designing"
+                                role="tab" aria-controls="web_designing" aria-selected="false">Robotics</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" id="it_support-tab" data-bs-toggle="tab" href="#it_support"
+                                role="tab" aria-controls="it_support" aria-selected="false">Management</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content case-studio-tab-content">
+                        <div class="tab-pane fade show active" id="development" role="tabpanel"
+                            aria-labelledby="development-tab">
+                            <div class="case-studio-body d-flex">
+                                <div class="row row-cols-1 row-cols-lg-3 g-2">
+                                    <div class="col">
+                                        <div class="career-box">
+
+                                            <h2>Web Design - <span>S.E</span></h2>
+                                            <p>6 weeks</p>
+                                            <div class="career-time">
+                                                <span><i class="las la-clock"></i> 3x per week</span>
+                                                <span><i class="fa-thin fa-naira-sign"></i>100,000 </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="career-box">
+
+                                            <h2>Web Design - <span>S.E</span></h2>
+                                            <p>6 weeks</p>
+                                            <div class="career-time">
+                                                <span><i class="las la-clock"></i> 3x per week</span>
+                                                <span><i class="fa-thin fa-naira-sign"></i>100,000 </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="career-box">
+
+                                            <h2>Web Design - <span>S.E</span></h2>
+                                            <p>6 weeks</p>
+                                            <div class="career-time">
+                                                <span><i class="las la-clock"></i> 3x per week</span>
+                                                <span><i class="fa-thin fa-naira-sign"></i>100,000 </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="career-box">
+
+                                            <h2>Web Design - <span>S.E</span></h2>
+                                            <p>6 weeks</p>
+                                            <div class="career-time">
+                                                <span><i class="las la-clock"></i> 3x per week</span>
+                                                <span><i class="fa-thin fa-naira-sign"></i>100,000 </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="career-box">
+
+                                            <h2>Web Design - <span>S.E</span></h2>
+                                            <p>6 weeks</p>
+                                            <div class="career-time">
+                                                <span><i class="las la-clock"></i> 3x per week</span>
+                                                <span><i class="fa-thin fa-naira-sign"></i>100,000 </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="career-box">
+
+                                            <h2>Web Design - <span>S.E</span></h2>
+                                            <p>6 weeks</p>
+                                            <div class="career-time">
+                                                <span><i class="las la-clock"></i> 3x per week</span>
+                                                <span><i class="fa-thin fa-naira-sign"></i>100,000 </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="woo_commerce" role="tabpanel" aria-labelledby="woo_commerce-tab">
+                            <div class="case-studio-body d-flex">
+                                <div class="left d-flex flex-1">
+                                    <div class="row row-cols-1 row-cols-lg-2 g-3">
+                                        <div class="col">
+                                            <div class="service-card simple-shadow">
+                                                <h3><a href="{% url "web:services" %}">Data Analysis</a></h3>
+                                                <p>Excel, Power BI, and SQL.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="service-card simple-shadow">
+                                                <h3><a href="{% url "web:services" %}">Data Analysis with Python</a>
+                                                </h3>
+                                                <p>Python libraries like Pandas, NumPy, and Matplotlib.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="service-card simple-shadow">
+                                                <h3><a href="{% url "web:services" %}">Data Science and Machine
+                                                        Learning</a>
+                                                </h3>
+                                                <p>predictive modeling, supervised/unsupervised learning, and AI
+                                                    algorithms.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="service-card simple-shadow">
+                                                <h3><a href="{% url "web:services" %}">Artificial Intelligence</a></h3>
+                                                <p>deep learning, natural language processing (NLP), and computer
+                                                    vision.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <div class="case-studio-contents service-card card-h">
+                                        <img src="{% static 'assets/imgs/service-icon-2.svg' %} " alt="ICON" />
+                                        <h3>Data Science</h3>
+                                        <p>In our company, you will learn how to analyze, visualize,
+                                            and derive insights from data to drive decision-making
+                                            and innovation then also to Unlock the power of data
+                                            with our comprehensive Data Science programs.</p>
+                                        <!-- <a href="#" class="theme-btn">
+                            <i class="iconoir-arrow-up-right"></i>
+                        </a> -->
+                                        <a href="{% url "web:services" %}" class="theme-btn btn-sm "
+                                            style="width: auto;">
+                                            Enroll Now
+                                            <i class="iconoir-arrow-up-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="crm_solutions" role="tabpanel"
+                            aria-labelledby="crm_solutions-tab">
+                            <div class="case-studio-body d-flex">
+                                <div class="left d-flex flex-1">
+                                    <div class="row row-cols-1 row-cols-lg-1 g-3">
+                                        <div class="col">
+                                            <div class="service-card simple-shadow">
+                                                <h3><a href="{% url "web:services" %}">Cyber Security</a></h3>
+                                                <p>cybersecurity frameworks, penetration testing,
+                                                    network administration, security tools and practices also python
+                                                    programming.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="service-card simple-shadow">
+                                                <h3><a href="{% url "web:services" %}">Certified Ethical Hacking</a>
+                                                </h3>
+                                                <p>Footprint and reconnaissance, enumeration, vulnerability analysis,
+                                                    scanning networks, social Engineering,
+                                                    ethical hacking tools and practices.</p>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="col">
+                        <div class="service-card simple-shadow">
+                            <h3><a href="{% url "web:services" %}">E-Commerce Solution</a></h3>
+                            <p>We have a best team for your shopping websites.</p>
+                        </div>
+                        </div>
+                        <div class="col">
+                        <div class="service-card simple-shadow">
+                            <h3><a href="{% url "web:services" %}">E-Commerce Solution</a></h3>
+                            <p>We have a best team for your shopping websites.</p>
+                        </div>
+                        </div> -->
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <div class="case-studio-contents service-card card-h">
+                                        <img src="{% static 'assets/imgs/service-icon-3.svg' %} " alt="ICON" />
+                                        <h3>Cyber Security</h3>
+                                        <p>At Semester Integrated Technologies, we provide in-depth training on network
+                                            security,
+                                            encryption, risk management, and cybersecurity frameworks also our programs
+                                            prepare
+                                            you for roles such as Security Analyst, Network Security Engineer,
+                                            penetration tester, ethical hacker and Cyber Risk Consultant.</p>
+                                        <!-- <a href="#" class="theme-btn">
+                            <i class="iconoir-arrow-up-right"></i>
+                        </a> -->
+                                        <a href="{% url "web:services" %}" class="theme-btn btn-sm "
+                                            style="width: auto;">
+                                            Enroll Now
+                                            <i class="iconoir-arrow-up-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="web_designing" role="tabpanel"
+                            aria-labelledby="web_designing-tab">
+                            <div class="case-studio-body d-flex">
+                                <div class="left d-flex flex-1">
+                                    <div class="row row-cols-1 row-cols-lg-2 g-3">
+                                        <div class="col">
+                                            <div class="service-card simple-shadow">
+                                                <h3><a href="{% url "web:services" %}">Robotics</a></h3>
+                                                <p>mechanical design, embedded programming, AI integration, and
+                                                    automation.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="service-card simple-shadow">
+                                                <h3><a href="{% url "web:services" %}">Internet of Things (IOT)</a>
+                                                </h3>
+                                                <p>IOT protocols, sensor networks, cloud computing and data analytics.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="service-card simple-shadow">
+                                                <h3><a href="{% url "web:services" %}">Embedded Systems</a></h3>
+                                                <p>microcontroller programming, real-time operating systems (RTOS),
+                                                    circuit design, and firmware development.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="service-card simple-shadow">
+                                                <h3><a href="{% url "web:services" %}">Smart Home Automation</a></h3>
+                                                <p>home automation protocols, IoT integration,
+                                                    AI-driven smart assistants, and wireless communication.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <div class="case-studio-contents service-card card-h">
+                                        <img src="{% static 'assets/imgs/service-icon-4.svg' %} " alt="ICON" />
+                                        <h3>Robotics</h3>
+                                        <p>At Semester Integrated Technologies, we shall equip you with the skills to
+                                            design,
+                                            build, and program intelligent robotic systems. Also train you mechanical
+                                            design, embedded programming, AI integration and
+                                            automation and prepare you for careers in industrial automation, healthcare
+                                            robotics, drone technology,
+                                            and AI-driven robotics solutions.</p>
+                                        <!-- <a href="#" class="theme-btn">
+                            <i class="iconoir-arrow-up-right"></i>
+                        </a> -->
+                                        <a href="{% url "web:services" %}" class="theme-btn btn-sm "
+                                            style="width: auto;">
+                                            Enroll Now
+                                            <i class="iconoir-arrow-up-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="it_support" role="tabpanel" aria-labelledby="it_support-tab">
+                            <div class="case-studio-body d-flex">
+                                <div class="left d-flex flex-1">
+                                    <div class="row row-cols-1 row-cols-lg-2 g-3">
+                                        <div class="col">
+                                            <div class="service-card simple-shadow">
+                                                <h3><a href="{% url "web:services" %}">Digital Marketing and
+                                                        Branding</a>
+                                                </h3>
+                                                <p>SEO, social media marketing, content strategy,
+                                                    paid advertising, and brand storytelling.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="service-card simple-shadow">
+                                                <h3><a href="{% url "web:services" %}">Product Design</a></h3>
+                                                <p>UI/UX principles, wireframing, prototyping and human-computer
+                                                    interaction also
+                                                    tools like Figma, Adobe XD, and Sketch.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="service-card simple-shadow">
+                                                <h3><a href="{% url "web:services" %}">Product Management</a></h3>
+                                                <p>Product roadmaps, conduct market research, define features, and
+                                                    oversee product lifecycles.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="service-card simple-shadow">
+                                                <h3><a href="{% url "web:services" %}">Project Management</a></h3>
+                                                <p>Agile, Scrum, PMP, and PRINCE2 methodologies.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <div class="case-studio-contents service-card card-h">
+                                        <img src="{% static 'assets/imgs/service-icon-5.svg' %} " alt="ICON" />
+                                        <h3>Management</h3>
+                                        <p>At Semester Integrated Technologies,you will take your organization to the
+                                            level
+                                            with our comprehensive management program from elevating your Online
+                                            presence and crafting
+                                            user-centered digital experiences, to developing successful products and
+                                            delivering Projects
+                                            efficiently, our expert-led training equip you with the skills to drive
+                                            business growth and achieve success.</p>
+                                        <a href="#" class="theme-btn">
+                                            <i class="iconoir-arrow-up-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- CTA -->
+        <section class="cta-area cta-style-3">
+            <div class="custom-container">
+                <div class="cta-body text-center">
+                    <img src="{% static 'assets/imgs/bg-shape-11.svg' %} " alt="Shape" class="animation-slide-left bg-shape" />
+                    <div class="our-expert-team-box">
+                        <div class="our-expert-team-box-inner d-flex align-items-center">
+                            <div class="imgs d-flex align-items-center">
+                                <img src="{% static 'assets/imgs/small-img-4.png' %} " alt="team" />
+                                <img src="{% static 'assets/imgs/small-img-3.png' %} " alt="team" />
+                                <img src="{% static 'assets/imgs/small-img-2.png' %} " alt="team" />
+                                <img src="{% static 'assets/imgs/small-img-1.png' %} " alt="team" />
+                            </div>
+                        </div>
+                    </div>
+                    <h2>Need any further assitance?</h2>
+                    <p>Feel free to reach out for any inquiries or assistance.</p>
+                    <a href="{% url "web:contact" %}" class="theme-btn">Book an appointment now</a>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Our Team -->
+        <section class="our-team-2-area our-team-3-area">
+            <div class="custom-container">
+                <div class="our-team-inner">
+                    <img src="{% static 'assets/imgs/bg-shape-mentors.svg' %} " alt="Shape"
+                        class="animation-slide-left bg-shape" />
+
+                    <div
+                        class="section-header our-team-2-header d-flex align-items-center justify-content-between w-full">
+                        <!-- <img class="bg-shape" src="./assets/imgs/bg-shape-10.svg" alt="Shape" /> -->
+                        <div class="left">
+                            <h5 class="section-subtitle">MENTORS</h5>
+                            <h1 class="section-title">Our leadership and mentors</h1>
+                            <p>Our team is a collective force of top talents, experts, and
+                                visionaries from diverse fields.</p>
+                        </div>
+
+                        <a href="#" class="theme-btn">Meet our experts now</a>
+                    </div>
+
+                    <div class="our-team-2-lists our-team-3-lists">
+                        <div class="our-team-2-card">
+                            <div class="img-box">
+                                <img src="{% static 'assets/imgs/team4.png' %} " alt="Team" />
+                            </div>
+                            <h2>Jennifer Linda</h2>
+                            <span class="designation">Product Designer</span>
+                        </div>
+                        <div class="our-team-2-card">
+                            <div class="img-box">
+                                <img src="{% static 'assets/imgs/team5.png' %} " alt="Team" />
+                            </div>
+                            <h2>Merlin Bullock</h2>
+                            <span class="designation">Business Analyst</span>
+                        </div>
+                        <div class="our-team-2-card">
+                            <div class="img-box">
+                                <img src="{% static 'assets/imgs/team6.png' %} " alt="Team" />
+                            </div>
+                            <h2>Beatrix Clara</h2>
+                            <span class="designation">Front End Developer</span>
+                        </div>
+                        <div class="our-team-2-card">
+                            <div class="img-box">
+                                <img src="{% static 'assets/imgs/team7.png' %} " alt="Team" />
+                            </div>
+                            <h2>Richard Parker</h2>
+                            <span class="designation">Back End Developer</span>
+                        </div>
+                        <div class="our-team-2-card">
+                            <div class="img-box">
+                                <img src="{% static 'assets/imgs/team8.png' %} " alt="Team" />
+                            </div>
+                            <h2>Aminul Ashfaq</h2>
+                            <span class="designation">Devops Engineer</span>
+                        </div>
+                        <div class="our-team-2-card">
+                            <div class="img-box">
+                                <img src="{% static 'assets/imgs/team9.png' %} " alt="Team" />
+                            </div>
+                            <h2>Margeret Allan</h2>
+                            <span class="designation">Cloud Expert</span>
+                        </div>
+                        <div class="our-team-2-card">
+                            <div class="img-box">
+                                <img src="{% static 'assets/imgs/team10.png' %} " alt="Team" />
+                            </div>
+                            <h2>Mason Williams</h2>
+                            <span class="designation">System Engineer</span>
+                        </div>
+                        <div class="our-team-2-card">
+                            <div class="img-box">
+                                <img src="{% static 'assets/imgs/team11.png' %} " alt="Team" />
+                            </div>
+                            <h2>Emily Frida</h2>
+                            <span class="designation">UX Designer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    {% endblock content %}

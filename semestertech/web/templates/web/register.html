@@ -1,0 +1,400 @@
+
+{% load static %}
+
+
+
+
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ========== Page Title ========== -->
+    <title>Synck - New IT Services and Business Consulting HTML5 Template</title>
+
+    <!-- ========== Start Fonts Style ========== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600&amp;family=Syne:wght@400;500;600&amp;family=Yantramanav:wght@100;300;400;500;700;900&amp;display=swap"
+        rel="stylesheet">
+    
+    <!-- ========== Start Stylesheet ========== -->
+    <link rel="stylesheet"
+        href="{% static 'assets/iconoir-icons/iconoir%40main/css/iconoir.css' %}">
+    <link rel="stylesheet"
+        href="{% static 'assets/css/line-awesome.min.css' %} ">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %} ">
+    <link rel="stylesheet" href="{% static 'assets/css/swiper-bundle.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+    <!-- ========== End Stylesheet ========== -->
+<style>
+    .case-studio-cat {
+    display: inline-block;
+    border-radius: 10px;
+    color: var(--primary_color);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    background: var(--primary_light2);
+    padding: 8px 21px;
+    position: absolute;
+    left: 24px;
+    top: 24px;
+    }
+    .case-studio-tab-content .service-card{
+        margin: 0px;
+    }
+    .news2-lists, .contact2-infos, .feature2-area .feature2-content-body, .service2-items {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        column-gap: 52px;
+
+    }
+    @media (max-width: 699px) {
+        .news2-lists, .contact2-infos, .feature2-area .feature2-content-body, .service2-items {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+</head>
+
+<body>
+    <!-- Main -->
+    <main class="main-page homepage">
+       
+
+        <!-- Header -->
+        <header class="header-area">
+
+            <div class="custom-container">
+                <div class="custom-row align-items-center justify-content-between">
+                    <div class="header-left d-flex align-items-center">
+                        <a href="{% url 'web:index' %}" class="logo">
+                            <img src="{% static 'assets/imgs/semester.png' %} " alt="Logo" />
+                        </a>
+
+                        <div class="header-left-right">
+                            <a href="{% url 'web:contact' %}" class="theme-btn">Contact Us</a>
+                            <span class="menu-bar">
+                                <i class="las la-bars"></i>
+                            </span>
+                        </div>
+                        <nav class="navbar-wrapper">
+                            <span class="close-menu-bar">
+                                <i class="las la-times"></i>
+                            </span>
+                            <ul>
+                             
+                                <li>
+                                    <a href="{% url "web:index" %}">Home</a>
+                                </li>
+                                <li >
+                                    <a href="{% url "web:services" %}">Services</a>
+                                </li>
+                                <li>
+                                    <a href="{% url "web:portfolio" %}">Portfolio</a>
+                                </li>
+                                <li>
+                                    <a href="{% url "web:about" %}">About Us</a>
+                                </li>
+                                
+                                <li>
+                                    <a href="{% url "web:career" %}">Career</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="header-right">
+                        <div class="header-contact-info d-flex align-items-center">
+                            <div class="phone-number">
+                                <a href="tel:+1-938-740-7555">
+                                    Call Us 
+                                    <i class="iconoir-arrow-up-right"></i>
+                                </a>
+                                +2347060928686
+                            </div>
+                            <a href="{% url 'web:contact' %}" class="theme-btn">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+
+
+
+
+
+        <!-- Contact -->
+        <section class="contact-area bg-dark">
+            <div class="custom-container">
+               
+                <div class="custom-row">
+                    <div class="contact-form-wrap shadow">
+                        <div class="hero-contact-form">
+                            <h5 class="section-subtitle">Register for a cousre</h5>
+                            <h1 class="section-title">Lets get you registered </h1>
+                            <p>You can reach us anytime via <a href="mailto:sales@semestertech.ng">sales@semestertech.ng</a></p>
+                            <form action="" method="POST" class="contact-form">
+                                {% csrf_token %}
+                                <div class="input-main-row">
+                                    {% if messages %}
+                                        <ul>
+                                            {% for message in messages %}
+                                                <li>{{ message }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                    <div class="input-row">
+                                        <div class="input-group">
+                                            <label for="first_name">First Name</label>
+                                            <input type="text" placeholder="First Name" id="first_name" name="first_name" required/>
+                                        </div>
+                                    </div>
+                                    <div class="input-row">
+                                        <div class="input-group">
+                                            <label for="last_name">Last Name</label>
+                                            <input type="text" placeholder="Last Name" id="last_name" name="last_name" required/>
+                                        </div>
+                                    </div>
+                                    <div class="input-row">
+                                        <div class="input-group">
+                                            <label for="email">Email</label>
+                                            <input type="email" placeholder="Your Email" id="email" name="email" required/>
+                                        </div>
+                                    </div>
+                                    <div class="input-row">
+                                        <div class="input-group">
+                                            <label for="phone_number">Phone Number</label>
+                                            <input type="text" name="phone" placeholder="Your Number" />
+                                        </div>
+                                    </div>
+                                    <div class="input-row">
+                                        <div class="input-group">
+                                            <label for="password">Password</label>
+                                            <input type="password" placeholder="Your your password" id="password" name="password1" required/>
+                                        </div>
+                                    </div>
+                                    <div class="input-row">
+                                        <div class="input-group">
+                                            <label for="password">Confirm Password</label>
+                                            <input type="password" placeholder="Confirm your password" id="password" name="password2" required/>
+                                        </div>
+                                    </div>
+                                   
+                                    
+                                </div>
+                                <div class="input-main-row">
+                                    {% comment %} <div class="input-row">
+                                        <div class="input-group">
+                                            <label>What you need from us?</label>
+                                            <div class="feedback-checkboxes d-flex flex-wrap">
+                                                {% for course in courses %}
+
+                                                <div class="feedback-item">
+                                                    <input type="checkbox" id="app_design" name="services[]" value="{{ course.id }}" required/>
+                                                    <label for="app_design">{{ course.code }} - {{ course.name }}</label>
+                                                </div>
+
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </div> {% endcomment %}
+                                   
+                                   
+                                    
+                                    <div class="input-row">
+                                        <div class="input-group">
+                                            <button class="theme-btn" type="submit">Get Started</button>
+                                        </div>
+                                    </div>
+                                    <!-- Alert Message -->
+                                    <div class="input-row">
+                                        <div class="input-group alert-notification">
+                                            <div id="alert-message" class="alert-msg"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                    
+                    
+               
+                 
+                </div>
+                
+            </div>
+        </section>
+
+
+        <!-- Footer -->
+        <footer class="footer-area">
+            <img src="{% static 'assets/imgs/bg-shape-4.svg' %} " alt="Shape" class="animation-slide-right bg-shape" />
+            <div class="footer-top">
+                <div class="custom-container">
+                    <div class="d-flex border-bottom flex-lg-row flex-column align-content-center justify-content-lg-between  p-3">
+                        <div class="left-content my-2">
+                            <a href="{% url 'web:index' %}" class="logo">
+                                <img src="{% static 'assets/imgs/Group70e.png' %} " />
+                            </a>
+                            <p>We provide the expertise and support to <br>
+                                propel your business forward.</p>
+                            <form action="#" method="POST" class="subscribe-form">
+                                <div class="subscribe-box d-flex">
+                                    <input type="email" id="email" name="email" placeholder="Enter Your Email" />
+                                    <button id="submit2" class="theme-btn">Get Started</button>
+                                </div>
+                                <!-- Alert Message -->  
+                                <div class="input-row">
+                                    <div class="input-group alert-notification">
+                                        <div id="alert-message-subscribe" class="alert-msg"></div>
+                                    </div>
+                                </div>
+                            </form>
+                            
+                        </div>
+                        <div class="left-content my-2">
+                            <div class="footer-links">
+                                <h3>Company</h3>
+                                <ul>
+                                    <li><a href="{% url "web:about" %}">about</a></li>
+                                    <li><a href="{% url "web:portfolio" %}">portfolio</a></li>
+                                    <li><a href="{% url "web:services" %}">services</a></li>
+                                    <li><a href="{% url "web:career" %}">Career</a></li>
+                                    <li><a href="{% url "web:contact" %}">Contact</a></li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+
+                        <div class="right-content my-2">
+                            <div class="footer-links">
+                                <h3>Services</h3>
+
+                                <ul class="contact-social-links">
+                                                <li>
+                                                    <a href="#">
+                                                        <?xml version="1.0" encoding="UTF-8"?><i class="iconoir-facebook"></i>
+                                                        Facebook
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <?xml version="1.0" encoding="UTF-8"?><i class="iconoir-twitter"></i>
+                                                        Twitter
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <?xml version="1.0" encoding="UTF-8"?><i class="iconoir-instagram"></i>
+                                                         Instagram
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <?xml version="1.0" encoding="UTF-8"?><i class="iconoir-linkedin"></i>
+                                                        linkedin
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <?xml version="1.0" encoding="UTF-8"?><i class="iconoir-tiktok"></i>
+                                                        Tiktok
+                                                    </a>
+                                                </li>
+                                               
+                                </ul>
+                            </div>   
+                        </div>
+                        <div class="right-content my-2">
+                            <div class="right-content-inner">
+                                    <h2>Contact Office</h2>
+                                    <p>Suite C2,Nymex Plaza,Opposite ammasco filling station <br>
+                                        Gado Nasco Road, NNPC jUNCTION, Kubwa, Abuja, Nigeria.
+                                    </p>
+
+                                    <div class="d-flex flex-column justify-content-between flex-lg-row">
+                                        <div class="footer-links">
+                                            <ul>
+                                                <li><h2>Phone</h2></li>
+                                                <li><a href="tel:+2347060928686">+2347060928686</a></li>
+                                            </ul>
+                                        </div> 
+                                        <div class="footer-links">
+                                                <ul>
+                                                   
+                                                    <li><h2>Mail</h2></li>
+                                                    <li> <a href="mailto:mandrodio@mail.com">sales@semestertech.ng</a></li>
+                                                </ul>
+                                        </div> 
+
+                                        
+                                    </div>
+                                                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="copyright-area">
+                <div class="custom-container">
+                    <div class="custom-row d-flex align-items-center justify-content-between">
+                        <ul class="social-links d-flex align-items-center">
+                            <li><a href="#">
+                                <i class="iconoir-tiktok"></i>
+                            </a></li>
+                            <li><a href="#">
+                                <i class="iconoir-twitter"></i>
+                            </a></li>
+                            <li><a href="#">
+                                <i class="iconoir-instagram"></i>
+                            </a></li>
+                            <li><a href="#">
+                                <i class="iconoir-linkedin"></i>
+                            </a></li>
+                        </ul>
+
+                        <p>&copy; 2025 All rights reserved by <a href="#">SEMESTER TECHNOLOGIES</a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    {% block custom_scripts %}
+    
+    
+    {% endblock custom_scripts %}
+
+
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="{% static 'assets/js/jquery-3.7.0.min.js' %} "></script>
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %} "></script>
+    <script src="{% static 'assets/js/gsap.min.js' %} "></script>
+    <script src="{% static 'assets/js/Draggable.min.js' %} "></script>
+    <script src="{% static 'assets/js/swiper-bundle.min.js' %} "></script>
+    <script src="{% static 'assets/js/client-marquee.js' %} "></script>
+    <script src="{% static 'assets/js/theme-custom.js' %} "></script>
+    <script src="{% static 'assets/js/form1.js' %} "></script>
+    <script src="{% static 'assets/js/subscribe-form.js' %} "></script>
+</body>
+
+
+</html>

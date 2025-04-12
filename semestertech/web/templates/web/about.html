@@ -1,0 +1,470 @@
+
+{% extends "web/base.html" %}
+{% load static %}
+{% block content %}
+       
+ <!-- About Hero -->
+ <section class="hero-service-wrap hero-section-wrap hero-about-wrap">
+    <div class="hero-section-content-wrap">
+        <div class="custom-container">
+            <div class="hero-portfolio-body">
+                <div class="hero-section-content text-center">
+                    <h5 class="section-subtitle">Semester Integrated Technologies</h5>
+                    <h1 class="section-title fade-in">Our company provide a best 
+                        horizon tech solutions</h1>
+                    <p>At Semester Tech, we deliver seamless technology solutions designed to drive your business growth. From innovative IT strategies to reliable support, we help you navigate the digital landscape confidently.</p>
+                </div>
+
+                <div class="hero-company-boxes">
+                    <div class="hero-company-box simple-shadow">
+                        <h1>50+</h1>
+                        <h3>Projects</h3>
+                        <p>We are spread around
+                            the world.</p>
+                    </div>
+                    <div class="hero-company-box simple-shadow">
+                        <h1>100%</h1>
+                        <h3>Client Satisfaction</h3>
+                        <p>Our clients a happy with 
+                            our service.</p>
+                    </div>
+                    <div class="hero-company-box simple-shadow">
+                        <h1>100+</h1>
+                        <h3>Legal Customers</h3>
+                        <p>Our customers are from
+                            many countries.</p>
+                    </div>
+                    <div class="hero-company-box simple-shadow">
+                        <h1>2018</h1>
+                        <h3>We Established On</h3>
+                        <p>Our company have a 
+                            great history.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Client Section -->
+<section class="client-area">
+    <div class="clients clients-marquee d-flex align-items-center">
+        <div class="client-logo simple-shadow">
+            <img src="{% static 'assets/imgs/client-logo1.svg' %} " alt="Client" />
+        </div>
+        <div class="client-logo simple-shadow">
+            <img src="{% static 'assets/imgs/client-logo2.svg' %} " alt="Client" />
+        </div>
+        <div class="client-logo simple-shadow">
+            <img src="{% static 'assets/imgs/client-logo3.svg' %} " alt="Client" />
+        </div>
+        <div class="client-logo simple-shadow">
+            <img src="{% static 'assets/imgs/client-logo4.svg' %} " alt="Client" />
+        </div>
+        <div class="client-logo simple-shadow">
+            <img src="{% static 'assets/imgs/client-logo5.svg' %} " alt="Client" />
+        </div>
+        <div class="client-logo simple-shadow">
+            <img src="{% static 'assets/imgs/client-logo2.svg' %} " alt="Client" />
+        </div>
+        <div class="client-logo simple-shadow">
+            <img src="{% static 'assets/imgs/client-logo3.svg' %} " alt="Client" />
+        </div>
+        <div class="client-logo simple-shadow">
+            <img src="{% static 'assets/imgs/client-logo4.svg' %} " alt="Client" />
+        </div>
+        <div class="client-logo simple-shadow">
+            <img src="{% static 'assets/imgs/client-logo5.svg' %} " alt="Client" />
+        </div>
+        <div class="client-logo simple-shadow">
+            <img src="{% static 'assets/imgs/client-logo2.svg' %} " alt="Client" />
+        </div>
+        <div class="client-logo" style="min-width: 0;"></div>
+    </div>
+</section>
+
+
+<!-- Service -->
+<section class="company-service-area">
+    <div class="custom-container">
+        <div class="hero-service-about">
+            <div class="section-header d-flex align-items-center justify-content-between w-full">
+                <div class="left">
+                    <h5 class="section-subtitle">Semester technologies</h5>
+                    <h1 class="section-title">About Semester Technologies</h1>
+                    <p>Contact us today to begin your journey!</p>
+                </div>
+                <a href="{% url "web:contact" %}" class="theme-btn">Contact Us</a>
+            </div>
+
+            <img src="{% static 'assets/imgs/hero-company-about.jpg' %} " alt="Service About"/>
+            <div class="hero-service-about-body">
+                <p>Semester Integrated Technologies, your trusted partner in innovative IT solutions. We specialize in delivering cutting-edge services tailored to meet the unique needs of businesses across various industries. Our commitment to excellence and customer satisfaction drives us to provide top-notch solutions that empower your business to thrive in the digital era.
+                </p>
+                <ul>
+                    <li>
+                        <i class="las la-check"></i> Infrastructure Management
+                    </li>
+                    <li>
+                        <i class="las la-check"></i> IT Support and Consultancy
+                    </li>
+                    <li>
+                        <i class="las la-check"></i> E-Commerce Solutions
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Service Area -->
+    <section class="service-area service-black-area py-5">
+        <div class="custom-container">
+            <div class="service-section-header section-header d-flex align-items-end justify-content-between">
+                <div class="left">
+                    <h5 class="section-subtitle">WHAT WE’RE OFFERING</h5>
+                    <h1 class="section-title">Dealing in all professional <br>IT services.</h1>
+                </div>
+                <p>One fundamental aspect of IT services is infrastructure management. This involves the design,
+                    implementation, and maintenance of the hardware, software, networks, and servers.</p>
+            </div>
+
+            <div class="services-list mb-3 d-flex">
+                <div class="service-card simple-shadow">
+                    <img src="{% static 'assets/imgs/service-icon-1.svg' %} " alt="Service Icon" class="service-icon" />
+                    <h3><a href="{% url "web:services" %}">Software Development</a></h3>
+                    <p>Transform Your Business with Customized Software Solutions.</p>
+                </div>
+                <div class="service-card simple-shadow">
+                    <img src="{% static 'assets/imgs/service-icon-4.svg' %} " alt="Service Icon" class="service-icon" />
+                    <h3><a href="{% url "web:services" %}">Website Development</a></h3>
+                    <p>Elevate Your Online Presence with Stunning Websites.</p>
+                </div>
+                <div class="service-card simple-shadow">
+                    <img src="{% static 'assets/imgs/service-icon-8.svg' %} " alt="Service Icon" class="service-icon" />
+                    <h3><a href="{% url "web:services" %}">Tech Training</a></h3>
+                    <p>Empowering individuals and teams with a top notch technological skills.</p>
+                </div>
+                <div class="service-card simple-shadow">
+                    <img src="{% static 'assets/imgs/chip-ai-svgrepo-com.svg' %} " alt="Service Icon" class="service-icon" />
+                    <h3><a href="{% url "web:services" %}">Artificial Intelligence</a></h3>
+                    <p>Unlock the Power of AI  tools to Transform Your Business vision.</p>
+                </div>
+                <div class="service-card simple-shadow">
+                    <img src="{% static 'assets/imgs/internet-security-svgrepo-com.svg' %} " alt="Service Icon" class="service-icon" />
+                    <h3><a href="{% url "web:services" %}">Cyber Security</a></h3>
+                    <p>Safeguard Your Business with Comprehensive Cyber Security and IT Support.</p>
+                </div>
+
+                <!-- <div class="service-card simple-shadow">
+                    <span class="service-badge">Free!</span>
+                    <img src="{% static '' %} assets/imgs/service-icon-5.svg" alt="Service Icon" class="service-icon" />
+                    <h3><a href="{% url "web:services" %}">IT Support</a></h3>
+                    <p>We offers expert assistance for your IT issues.</p>
+                </div> -->
+                
+            </div>
+            
+            <div class="services-list d-flex">
+                <div class="service-card simple-shadow">
+                    <img src="{% static 'assets/imgs/hwd-icon-6.svg' %} " alt="Service Icon" class="service-icon" />
+                    <h3><a href="{% url "web:services" %}">Digital Marketing</a></h3>
+                    <p>Amplify Your Brand's Online Presence with Strategic Digital Marketing.</p>
+                    
+                </div>
+                <div class="service-card simple-shadow">
+                    <img src="{% static 'assets/imgs/robotics-svgrepo-com.svg' %} " alt="Service Icon" class="service-icon" />
+                    <h3><a href="{% url "web:services" %}">Robotics and Automation</a></h3>
+                    <p>Streamlining operations with state-of-the-art automation solutions.</p>
+                </div>
+                <div class="service-card simple-shadow">
+                    <img src="{% static 'assets/imgs/hwd-icon-4.svg' %} " alt="Service Icon" class="service-icon" />
+                    <h3><a href="{% url "web:services" %}">Cloud Computing</a></h3>
+                    <p>Unlock the Full Potential of Cloud Computing with Our Expert Guidance</p>
+                </div>
+                <div class="service-card simple-shadow">
+                    <img src="{% static 'assets/imgs/service-icon-2.svg' %} " alt="Service Icon" class="service-icon" />
+                    <h3><a href="{% url "web:services" %}">E-Commerce Solution</a></h3>
+                    <p>Seamlessly Integrate E-commerce Solutions for Uninterrupted Sales.</p>
+                </div>
+               
+                
+                <div class="service-card simple-shadow">
+                    <!-- <span class="service-badge">Free!</span> -->
+                    <img src="{% static 'assets/imgs/service-icon-5.svg' %} " alt="Service Icon" class="service-icon" />
+                    <h3><a href="{% url "web:services" %}">IT Support and Consultancy</a></h3>
+                    <p>We offers expert assistance for your IT issues and technological solutions.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+
+<!-- Our Team -->
+<section class="our-team-2-area">
+    <div class="custom-container">
+        <div class="section-header our-team-2-header d-flex align-items-center justify-content-between w-full">
+            <img class="animation-slide-right bg-shape" src="{% static 'assets/imgs/bg-shape-10.svg' %} " alt="Shape" />
+            <div class="left">
+                <h5 class="section-subtitle">OUR TEAM</h5>
+                <h1 class="section-title">Our professional experts</h1>
+                <p>Our team is a collective force of top talents, experts, and <br>
+                    visionaries from diverse fields.</p>
+            </div>
+
+            <a href="{% url "web:contact" %}" class="theme-btn">Book an appointment with our us now</a>
+        </div>
+
+        <div class="our-team-2-lists">
+            <div class="our-team-2-card">
+                <div class="img-box">
+                    <img src="{% static 'assets/imgs/workpics/HamzatAdebayo.jpg' %} " alt="Team"/>
+                </div>
+                <h2> Hamzat Adebayo</h2>
+                <span class="designation">Software Engineer</span>
+                <ul class="social-links d-flex align-items-center">
+                    <li><a href="https://www.linkedin.com/in/hamzat-adebayo/">
+                        <i class="iconoir-linkedin"></i>
+                    </a></li>
+                    <li><a href="mailto:hamzatadebayo5@gmail.com">
+                        <i class="iconoir-mail"></i>
+                    </a></li>
+                   
+                </ul>
+            </div>
+            <div class="our-team-2-card">
+                <div class="img-box">
+                    <img src="{% static 'assets/imgs/workpics/FunmikeOnisola.jpg' %} "  alt="Team"/>
+                </div>
+                <h2>Onisola Olufunke</h2>
+                <span class="designation">Data Analyst</span>
+                <ul class="social-links d-flex align-items-center">
+                    <li><a href="https://www.linkedin.com/in/olufunkeonisola/">
+                        <i class="iconoir-linkedin"></i>
+                    </a></li>
+                    <li><a href="mailto:olufunkeonisola@gmail.com">
+                        <i class="iconoir-mail"></i>
+                    </a></li>
+                </ul>
+            </div>
+            <div class="our-team-2-card">
+                <div class="img-box">
+                    <img src="{% static 'assets/imgs/workpics/Rosendubusi.jpg' %} "  alt="Team"/>
+                </div>
+                <h2>Ndubuisi Maryrose</h2>
+                <span class="designation">Product Designer</span>
+                <ul class="social-links d-flex align-items-center">
+                    <li><a href="https://www.linkedin.com/in/ndubuisi-maryrose-">
+                        <i class="iconoir-linkedin"></i>
+                    </a></li>
+                    <li><a href="mailto:maryrosendubuisi994@gmail.com">
+                        <i class="iconoir-mail"></i>
+                    </a></li>
+                </ul>
+            </div>
+            <div class="our-team-2-card">
+                <div class="img-box">
+                    <img src="{% static 'assets/imgs/workpics/JosephFelix.jpeg' %} " alt="Team"/>
+                </div>
+                <h2>Ali Felix</h2>
+                <span class="designation">Product Manager</span>
+                <ul class="social-links d-flex align-items-center">
+                    <li><a href="http://linkedin.com/in/ali-joseph-ali-19939b233">
+                        <i class="iconoir-linkedin"></i>
+                    </a></li>
+                    <li><a href="mailto:alijosephali11@gmail.com">
+                        <i class="iconoir-mail"></i>
+                    </a></li>
+                </ul>
+            </div>
+            <div class="our-team-2-card">
+                <div class="img-box">
+                    <img src="{% static 'assets/imgs/workpics/shalomokugbeni.jpg' %} " alt="Team"/>
+                </div>
+                <h2>Shalom Okugbeni</h2>
+                <span class="designation">Data Analyst</span>
+                <ul class="social-links d-flex align-items-center">
+                    <li><a href="https://www.linkedin.com/in/shalomokugbeni">
+                        <i class="iconoir-linkedin"></i>
+                    </a></li>
+                    <li><a href="mailto:shalomokugbeni@gmail.com">
+                        <i class="iconoir-mail"></i>
+                    </a></li>
+                </ul>
+            </div>
+            <div class="our-team-2-card">
+                <div class="img-box">
+                    <img src="{% static 'assets/imgs/workpics/HassanHuzaifa.jpg' %} " alt="Team"/>
+                </div>
+                <h2>Isa Huzaifa</h2>
+                <span class="designation">Cybersecurity Analyst</span>
+                <ul class="social-links d-flex align-items-center">
+                    <li><a href="https://www.linkedin.com/in/huzaifa-isa-135015180?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+                        <i class="iconoir-linkedin"></i>
+                    </a></li>
+                    <li><a href="mailto:Hassanhuzayfa93@gmail.com">
+                        <i class="iconoir-mail"></i>
+                    </a></li>
+                </ul>
+            </div>
+            <div class="our-team-2-card">
+                <div class="img-box">
+                    <img src="{% static 'assets/imgs/workpics/AmadiGodswill.jpg' %} " alt="Team"/>
+                </div>
+                <h2>Amadi Godswill </h2>
+                <span class="designation">Software Engineer</span>
+                <ul class="social-links d-flex align-items-center">
+                    <li><a href="https://www.linkedin.com/in/uchechukwu-amadi-446b79254">
+                        <i class="iconoir-linkedin"></i>
+                    </a></li>
+                    <li><a href="mailto:Uchegwillama@gmail.com">
+                        <i class="iconoir-mail"></i>
+                    </a></li>
+                </ul>
+            </div>
+            <div class="our-team-2-card">
+                <div class="img-box">
+                    <img src="{% static 'assets/imgs/workpics/IruedoChristopher.jpg' %} " alt="Team"/>
+                </div>
+                <h2>Iruedo Christopher</h2>
+                <span class="designation">Python Developer</span>
+                <ul class="social-links d-flex align-items-center">
+                    <li><a href="https://www.linkedin.com/in/iruedo-christopher-483882253/">
+                        <i class="iconoir-linkedin"></i>
+                    </a></li>
+                    <li><a href="mailto:iruedochristopher1995@gmail.com">
+                        <i class="iconoir-mail"></i>
+                    </a></li>
+                </ul>
+            </div>
+            <div class="our-team-2-card">
+                <div class="img-box">
+                    <img src="{% static 'assets/imgs/workpics/ogunchefaith.jpeg' %} " alt="Team"/>
+                </div>
+                <h2>Oguche Queen</h2>
+                <span class="designation">UI/UX instructor</span>
+                <ul class="social-links d-flex align-items-center">
+                    <li><a href="https://www.linkedin.com/in/oguche-queen-faith-b11950276?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+                        <i class="iconoir-linkedin"></i>
+                    </a></li>
+                    <li><a href="mailto:oguchequeenfaith10@gmail.com">
+                        <i class="iconoir-mail"></i>
+                    </a></li>
+                    
+                </ul>
+            </div>
+            <div class="our-team-2-card">
+                <div class="img-box">
+                    <img src="{% static 'assets/imgs/workpics/GloryObi.jpeg' %} " alt="Team"/>
+                </div>
+                <h2>Glory Obi</h2>
+                <span class="designation">Data Analyst/ Business Analyst</span>
+                <ul class="social-links d-flex align-items-center">
+                    <li><a href="https://www.linkedin.com/in/glory-obi-yeoki?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
+                        <i class="iconoir-linkedin"></i>
+                    </a></li>
+                    <li><a href="mailto:gloryobi98@gmail.com">
+                        <i class="iconoir-mail"></i>
+                    </a></li>
+                </ul>
+            </div>
+            <div class="our-team-2-card">
+                <div class="img-box">
+                    <img src="{% static 'assets/imgs/workpics/AISHAMUSTAPHA.jpg' %} " alt="Team"/>
+                </div>
+                <h2>Aisha Mustapha</h2>
+                <span class="designation">Data Analyst</span>
+                <ul class="social-links d-flex align-items-center">
+                    <li><a href="https://www.linkedin.com/in/aisha-mustapha-4973b5317">
+                        <i class="iconoir-linkedin"></i>
+                    </a></li>
+                    <li><a href="mailto:amdamboa@gmail.com">
+                        <i class="iconoir-mail"></i>
+                    </a></li>
+                </ul>
+            </div>
+            <div class="our-team-2-card">
+                <div class="img-box">
+                    <img src="{% static 'assets/imgs/workpics/timioye.jpeg' %} " alt="Team"/>
+                </div>
+                <h2>Oyebamiji Akinkunmi</h2>
+                <span class="designation">Software Developer</span>
+                <ul class="social-links d-flex align-items-center">
+                    <li><a href="https://www.linkedin.com/in/oyebamiji-akinkunmi-a6938a302?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+                        <i class="iconoir-linkedin"></i>
+                    </a></li>
+                    <li><a href="mailto:oyebamijiakinkunmi956@gmail.com">
+                        <i class="iconoir-mail"></i>
+                    </a></li>
+                </ul>
+            </div>
+            <div class="our-team-2-card">
+                <div class="img-box">
+                    <img src="{% static 'assets/imgs/workpics/ruthozokolo.jpeg' %} " alt="Team"/>
+                </div>
+                <h2>Ozokolo Ruth</h2>
+                <span class="designation">Data Analyst</span>
+                <ul class="social-links d-flex align-items-center">
+                    <li><a href="https://www.linkedin.com/in/ruth-ozokolo-976a25215?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+                        <i class="iconoir-linkedin"></i>
+                    </a></li>
+                    <li><a href="mailto:ozokoloruth@gmail.com">
+                        <i class="iconoir-mail"></i>
+                    </a></li>
+                </ul>
+            </div>
+            <div class="our-team-2-card">
+                <div class="img-box">
+                    <img src="{% static 'assets/imgs/workpics/SylviaOkedi.jpg' %} " alt="Team"/>
+                </div>
+                <h2>Sylvia Okedi</h2>
+                <span class="designation">UI/UX Instructor</span>
+                <ul class="social-links d-flex align-items-center">
+                    <li><a href="https://linkedin.com/in/sylvia-okedi-ojoma">
+                        <i class="iconoir-linkedin"></i>
+                    </a></li>
+                    <li><a href="mailto:sylviaikedi4@gmail.com">
+                        <i class="iconoir-mail"></i>
+                    </a></li>
+                </ul>
+            </div>
+            
+
+        </div>
+    </div>
+</section>
+
+
+<!-- About -->
+<section class="about-service3-area">
+    <div class="custom-container">
+        <div class="custom-row align-items-center">
+            <div class="img-box">
+                <img src="{% static 'assets/imgs/about-service-3.png' %} " alt="About" />
+            </div>
+
+            <div class="content-box">
+                <h1> Why are we so unique?<br></h1>
+                    
+                <p>In a world where cookie-cutter solutions are the norm, we dare to be different. At Semester Technologies, we believe that every individual, every team, and every organization is unique, with distinct challenges and aspirations.</p>
+                <p>That's why we don't believe in a one-size-fits-all approach. Instead, our experts work closely with you to understand your specific needs, goals, and pain points. We then tailor our services to address these unique requirements, ensuring that you receive solutions that are truly yours.</p>
+                <ul>
+                    <li>
+                        <i class="las la-check"></i> Innovative Solutions
+                    </li>
+                    <li>
+                        <i class="las la-check"></i> Quick Response
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock content %}
+       

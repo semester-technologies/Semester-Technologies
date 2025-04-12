@@ -1,0 +1,697 @@
+
+{% extends "web/base.html" %}
+{% load static %}
+{% block content %}
+       
+
+         <!-- Hero -->
+         <section class="hero-section-wrap hero-home2 py-0 ">
+            <div class="hero-section-content-wrap py-5">
+                <img class="bg-shape slide-left" src="{% static 'assets/imgs/bg-shape-6.svg' %} " alt="Shape" />
+                <img class="bg-shape2 slide-right" src="{% static 'assets/imgs/bg-shape-5.svg' %} " alt="Shape" />
+                <div class="custom-container">
+                    <div class="hero-section-content text-center">
+                        <h5 class="section-subtitle">SEMESTER TECHNOLOGIES</h5>
+                        <h1 class="section-title fade-in">Seamless IT for your business, boosting your growth.</h1>
+                        <p>We provide the expertise and support to propel your
+                            business forward in the digital landscape.</p>
+                            <div class="btns-group">
+                                <a href="#" class="theme-btn">Learn More</a>
+                                <a href="{% url "web:contact" %}" class="theme-btn2">Let's Talk
+                                    <i class="iconoir-arrow-up-right"></i>
+                                </a>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+        
+
+
+        <!-- Client Section -->
+        <section class="client-area p-2">
+            <div class="clients clients-marquee d-flex align-items-center">
+                <div class="client-logo simple-shadow">
+                    <img src="{% static 'assets/imgs/client-logo1.svg' %} " alt="Client" />
+                </div>
+                <div class="client-logo simple-shadow">
+                    <img src="{% static 'assets/imgs/client-logo2.svg' %} " alt="Client" />
+                </div>
+                <div class="client-logo simple-shadow">
+                    <img src="{% static 'assets/imgs/client-logo3.svg' %} " alt="Client" />
+                </div>
+                <div class="client-logo simple-shadow">
+                    <img src="{% static 'assets/imgs/client-logo4.svg' %} " alt="Client" />
+                </div>
+                <div class="client-logo simple-shadow">
+                    <img src="{% static 'assets/imgs/client-logo5.svg' %} " alt="Client" />
+                </div>
+                <div class="client-logo simple-shadow">
+                    <img src="{% static 'assets/imgs/client-logo2.svg' %} " alt="Client" />
+                </div>
+                <div class="client-logo simple-shadow">
+                    <img src="{% static 'assets/imgs/client-logo3.svg' %} " alt="Client" />
+                </div>
+                <div class="client-logo simple-shadow">
+                    <img src="{% static 'assets/imgs/client-logo4.svg' %} " alt="Client" />
+                </div>
+                <div class="client-logo simple-shadow">
+                    <img src="{% static 'assets/imgs/client-logo5.svg' %} " alt="Client" />
+                </div>
+                <div class="client-logo simple-shadow">
+                    <img src="{% static 'assets/imgs/client-logo2.svg' %} " alt="Client" />
+                </div>
+                <div class="client-logo" style="min-width: 0;"></div>
+            </div>
+        </section>
+
+
+        <!-- How We Do -->
+        <section class="how-we-do-area mb-2 mb-lg-5">
+            <div class="custom-container">
+                <div class="custom-row">
+                    <img src="{% static 'assets/imgs/bg-shape-1.svg' %} " alt="Shape" class="animation-slide-left how-we-do-bg" />
+                    <div class="how-we-do-left-content">
+                        <div class="top">
+                            <h5 class="section-subtitle">Our Model</h5>
+                            <h1 class="section-title">How we do</h1>
+                            <p>Save time and money with our powerful method.</p>
+                        </div>
+                        <a href="{% url "web:services" %}" class="theme-btn">
+                            Learn More
+                            <i class="iconoir-arrow-up-right"></i>
+                        </a>
+                    </div>
+                    <div class="how-we-do-right-content">
+                        <div class="how-we-do-items d-flex align-items-center justify-content-center">
+
+                            <div class="how-we-do-card">
+                                <div class="circle-shape"></div>
+                                <div class="line-shape"></div>
+
+                                <div class="how-we-do-icon">
+                                    <img src="{% static 'assets/imgs/hwd-icon-1.svg' %} " alt="How we do" />
+                                </div>
+                                <div class="how-we-do-content">
+                                    <h4>Brainstroming</h4>
+                                    <p>Ideas</p>
+                                </div>
+                            </div>
+
+                            <div class="how-we-do-card">
+                                <div class="circle-shape"></div>
+                                <div class="line-shape"></div>
+
+                                <div class="how-we-do-icon">
+                                    <img src="{% static 'assets/imgs/hwd-icon-2.svg' %} " alt="How we do" />
+                                </div>
+                                <div class="how-we-do-content">
+                                    <h4>Product</h4>
+                                    <p>Design</p>
+                                </div>
+                            </div>
+
+                            <div class="how-we-do-card">
+                                <div class="circle-shape"></div>
+                                <div class="line-shape"></div>
+
+                                <div class="how-we-do-icon">
+                                    <img src="{% static 'assets/imgs/hwd-icon-3.svg' %} " alt="How we do" />
+                                </div>
+                                <div class="how-we-do-content">
+                                    <h4>Front-End</h4>
+                                    <p>Development</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="how-we-do-items d-flex align-items-center justify-content-center">
+                            <div class="how-we-do-card">
+                                <div class="circle-shape"></div>
+                                <div class="line-shape"></div>
+
+                                <div class="how-we-do-icon">
+                                    <img src="{% static 'assets/imgs/hwd-icon-4.svg' %} " alt="How we do" />
+                                </div>
+                                <div class="how-we-do-content">
+                                    <h4>SEO</h4>
+                                    <p>Optimization</p>
+                                </div>
+                            </div>
+
+                            <div class="how-we-do-card">
+                                <div class="circle-shape"></div>
+                                <div class="line-shape"></div>
+
+                                <div class="how-we-do-icon">
+                                    <img src="{% static 'assets/imgs/hwd-icon-5.svg' %} " alt="How we do" />
+                                </div>
+                                <div class="how-we-do-content">
+                                    <h4>Back-End</h4>
+                                    <p>Development</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="how-we-do-items d-flex align-items-center justify-content-center">
+
+                            <div class="how-we-do-card">
+                                <div class="circle-shape"></div>
+                                <div class="line-shape"></div>
+
+                                <div class="how-we-do-icon">
+                                    <img src="{% static 'assets/imgs/hwd-icon-6.svg' %} " alt="How we do" />
+                                </div>
+                                <div class="how-we-do-content">
+                                    <h4>Digital</h4>
+                                    <p>Marketing</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Service Area -->
+        <section class="service-area service-black-area">
+            <div class="custom-container">
+                <div class="service-section-header section-header d-flex align-items-end justify-content-between">
+                    <div class="left">
+                        <h5 class="section-subtitle">WHAT WE’RE OFFERING</h5>
+                        <h1 class="section-title">Dealing in all professional <br>IT services.</h1>
+                    </div>
+                    <p>One fundamental aspect of IT services is infrastructure management. This involves the design,
+                        implementation, and maintenance of the hardware, software, networks, and servers.</p>
+                </div>
+
+                <div class="services-list mb-3 d-flex">
+                    <div class="service-card simple-shadow">
+                        <img src="{% static 'assets/imgs/service-icon-1.svg' %} " alt="Service Icon" class="service-icon" />
+                        <h3><a href="{% url "web:services" %}">Software Development</a></h3>
+                        <p>Transform Your Business with Customized Software Solutions.</p>
+                         
+                            
+                    </div>
+                    <div class="service-card simple-shadow">
+                        <img src="{% static 'assets/imgs/service-icon-4.svg' %} " alt="Service Icon" class="service-icon" />
+                        <h3><a href="{% url "web:services" %}">Website Development</a></h3>
+                        <p>Elevate Your Online Presence with Stunning Websites.</p>
+                    </div>
+                    <div class="service-card simple-shadow">
+                        <img src="{% static 'assets/imgs/service-icon-8.svg' %} " alt="Service Icon" class="service-icon" />
+                        <h3><a href="{% url "web:services" %}">Tech Training</a></h3>
+                        <p>Empowering individuals and teams with a top notch technological skills.</p>
+                            
+                            
+                    </div>
+                    <div class="service-card simple-shadow">
+                        <img src="{% static 'assets/imgs/chip-ai-svgrepo-com.svg' %} " alt="Service Icon" class="service-icon" />
+                        <h3><a href="{% url "web:services" %}">Artificial Intelligence</a></h3>
+                        <p>Unlock the Power of AI  tools to Transform Your Business vision.</p>
+                    </div>
+                    <div class="service-card simple-shadow">
+                        <img src="{% static 'assets/imgs/internet-security-svgrepo-com.svg' %} " alt="Service Icon" class="service-icon" />
+                        <h3><a href="{% url "web:services" %}">Cyber Security</a></h3>
+                        <p>Safeguard Your Business with Comprehensive Cyber Security and IT Support.</p>
+                    </div>
+
+                    <!-- <div class="service-card simple-shadow">
+                        <span class="service-badge">Free!</span>
+                        <img src="{% static '' %} assets/imgs/service-icon-5.svg" alt="Service Icon" class="service-icon" />
+                        <h3><a href="{% url "web:services" %}">IT Support</a></h3>
+                        <p>We offers expert assistance for your IT issues.</p>
+                    </div> -->
+                    
+                </div>
+                
+                <div class="services-list d-flex">
+                    <div class="service-card simple-shadow">
+                        <img src="{% static 'assets/imgs/hwd-icon-6.svg' %} " alt="Service Icon" class="service-icon" />
+                        <h3><a href="{% url "web:services" %}">Digital Marketing</a></h3>
+                        <p>Amplify Your Brand's Online Presence with Strategic Digital Marketing.</p>
+                        
+                    </div>
+                    <div class="service-card simple-shadow">
+                        <img src="{% static 'assets/imgs/robotics-svgrepo-com.svg' %} " alt="Service Icon" class="service-icon" />
+                        <h3><a href="{% url "web:services" %}">Robotics and Automation</a></h3>
+                        <p>Streamlining operations with state-of-the-art automation solutions.</p>
+                    </div>
+                    <div class="service-card simple-shadow">
+                        <img src="{% static 'assets/imgs/hwd-icon-4.svg' %} " alt="Service Icon" class="service-icon" />
+                        <h3><a href="{% url "web:services" %}">Cloud Computing</a></h3>
+                        <p>Unlock the Full Potential of Cloud Computing with Our Expert Guidance.</p>
+                    </div>
+                    <div class="service-card simple-shadow">
+                        <img src="{% static 'assets/imgs/service-icon-2.svg' %} " alt="Service Icon" class="service-icon" />
+                        <h3><a href="{% url "web:services" %}">E-Commerce Solution</a></h3>
+                        <p>Seamlessly Integrate E-commerce Solutions for Uninterrupted Sales.</p>
+                    </div>
+                   
+                    
+                    <div class="service-card simple-shadow">
+                        <!-- <span class="service-badge">Free!</span> -->
+                        <img src="{% static 'assets/imgs/service-icon-5.svg' %} " alt="Service Icon" class="service-icon" />
+                        <h3><a href="{% url "web:services" %}">IT Support and Consultancy</a></h3>
+                        <p>We offers expert assistance for your IT issues and technological solutions.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Case Studio -->
+        <section class="case-studio-area">
+            <div class="custom-container">
+                <div class="case-studio-header text-center">
+                    <h5 class="section-subtitle">TRAIN WITH US</h5>
+                    <h1 class="section-title">Our Course Career Paths</h1>
+                </div>
+
+
+                <div class="case-studio">
+
+                    <ul class="nav nav-pills case-studio-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <button class="nav-link active" id="development-tab" data-bs-toggle="tab" href="#development"
+                                role="tab" aria-controls="development" aria-selected="true">Software Development</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" id="woo_commerce-tab" data-bs-toggle="tab" href="#woo_commerce" role="tab"
+                                aria-controls="woo_commerce" aria-selected="false">Data Science</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" id="crm_solutions-tab" data-bs-toggle="tab" href="#crm_solutions"
+                                role="tab" aria-controls="crm_solutions" aria-selected="false">Cyber Security</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" id="web_designing-tab" data-bs-toggle="tab" href="#web_designing"
+                                role="tab" aria-controls="web_designing" aria-selected="false">Robotics</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" id="it_support-tab" data-bs-toggle="tab" href="#it_support" role="tab"
+                                aria-controls="it_support" aria-selected="false">Management</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content case-studio-tab-content">
+                        <div class="tab-pane fade show active" id="development" role="tabpanel" aria-labelledby="development-tab">
+                            <div class="case-studio-body d-flex">
+                                <div class="left d-flex flex-1">
+                                    <div class="row row-cols-1 row-cols-lg-2 g-3">
+                                        <div class="col">
+                                            <div class="service-card simple-shadow">
+                                                <h3><a href="{% url "web:services" %}">Web Design</a></h3>
+                                                <p> HTML, CSS, JavaScript, React.js.</p>
+                                                
+                                                <!-- <a href="{% url "web:services" %}" class="theme-btn btn-sm mt-3"> Enroll Now
+                                                    <i class="iconoir-arrow-up-right"></i></a> -->
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                        <div class="service-card simple-shadow">
+                                            <h3><a href="{% url "web:services" %}">Web Development</a></h3>
+                                            <p>Python (Django, Flask), Node.js, and PHP (Laravel).</p>
+                                        </div>
+                                        </div>
+                                        <div class="col">
+                                        <div class="service-card simple-shadow">
+                                            <h3><a href="{% url "web:services" %}">Mobile Application Development</a></h3>
+                                            <p>Native apps (Java/Kotlin for Android, Swift for iOS) Hybrid apps (Flutter, React Native).</p>
+                                        </div>
+                                        </div>
+                                        <div class="col">
+                                        <div class="service-card simple-shadow">
+                                            <h3><a href="{% url "web:services" %}">Desktop Application Development</a></h3>
+                                            <p>Java, Python, C# and Javascript.</p>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="right">
+                                    <div class="case-studio-contents service-card card-h">
+                                        <img src="{% static 'assets/imgs/service-icon-1.svg' %} " alt="ICON" />
+                                        <h3>Software Development</h3>
+                                        <p>At Semester Tech, you will learn how to create a dynamic,responsive and user friendly website and applications. 
+                                            We have tech expert that will teach and guide you on how to design a stunning website, build a robust web application 
+                                            also to develop a mobile and desktop apps.</p>
+                                        <a href="{% url "web:services" %}" class="theme-btn btn-sm " style="width: auto;"> Enroll Now
+                                                <i class="iconoir-arrow-up-right"></i></a>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="woo_commerce" role="tabpanel" aria-labelledby="woo_commerce-tab">
+                            <div class="case-studio-body d-flex">
+                                <div class="left d-flex flex-1">
+                                    <div class="row row-cols-1 row-cols-lg-2 g-3">
+                                        <div class="col">
+                                            <div class="service-card simple-shadow">
+                                                <h3><a href="{% url "web:services" %}">Data Analysis</a></h3>
+                                                <p>Excel, Power BI, and SQL.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                        <div class="service-card simple-shadow">
+                                            <h3><a href="{% url "web:services" %}">Data Analysis with Python</a></h3>
+                                            <p>Python libraries like Pandas, NumPy, and Matplotlib.</p>
+                                        </div>
+                                        </div>
+                                        <div class="col">
+                                        <div class="service-card simple-shadow">
+                                            <h3><a href="{% url "web:services" %}">Data Science and Machine Learning</a></h3>
+                                            <p>predictive modeling, supervised/unsupervised learning, and AI algorithms.</p>
+                                        </div>
+                                        </div>
+                                        <div class="col">
+                                        <div class="service-card simple-shadow">
+                                            <h3><a href="{% url "web:services" %}">Artificial Intelligence</a></h3>
+                                            <p>deep learning, natural language processing (NLP), and computer vision.</p>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <div class="case-studio-contents service-card card-h">
+                                        <img src="{% static 'assets/imgs/service-icon-2.svg' %} " alt="ICON" />
+                                        <h3>Data Science</h3>
+                                        <p>Semester Integrated Technologies, you will learn how to analyze, visualize, 
+                                            and derive insights from data to drive decision-making 
+                                            and innovation then also to Unlock the power of data 
+                                            with our comprehensive Data Science programs.</p>
+                                        <!-- <a href="#" class="theme-btn">
+                                            <i class="iconoir-arrow-up-right"></i>
+                                        </a> -->
+                                        <a href="{% url "web:services" %}" class="theme-btn btn-sm " style="width: auto;"> Enroll Now
+                                            <i class="iconoir-arrow-up-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="crm_solutions" role="tabpanel" aria-labelledby="crm_solutions-tab">
+                            <div class="case-studio-body d-flex">
+                                <div class="left d-flex flex-1">
+                                    <div class="row row-cols-1 row-cols-lg-1 g-3">
+                                        <div class="col">
+                                            <div class="service-card simple-shadow">
+                                                <h3><a href="{% url "web:services" %}">Cyber Security</a></h3>
+                                                <p>cybersecurity frameworks, penetration testing, 
+                                                    network administration, security tools and practices also python programming.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                        <div class="service-card simple-shadow">
+                                            <h3><a href="{% url "web:services" %}">Certified Ethical Hacking</a></h3>
+                                            <p>Footprint and reconnaissance, enumeration, vulnerability analysis, scanning networks, social Engineering,
+                                                ethical hacking tools and practices.</p>
+                                        </div>
+                                        </div>
+                                        <!-- <div class="col">
+                                        <div class="service-card simple-shadow">
+                                            <h3><a href="{% url "web:services" %}">E-Commerce Solution</a></h3>
+                                            <p>We have a best team for your shopping websites.</p>
+                                        </div>
+                                        </div>
+                                        <div class="col">
+                                        <div class="service-card simple-shadow">
+                                            <h3><a href="{% url "web:services" %}">E-Commerce Solution</a></h3>
+                                            <p>We have a best team for your shopping websites.</p>
+                                        </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <div class="case-studio-contents service-card card-h">
+                                        <img src="{% static 'assets/imgs/service-icon-3.svg' %} " alt="ICON" />
+                                        <h3>Cyber Security</h3>
+                                        <p>At Semester Integrated Technologies, we provide in-depth training on network security,
+                                             encryption, risk management, and cybersecurity frameworks also our programs prepare 
+                                             you for roles such as Security Analyst, Network Security Engineer, penetration tester, ethical hacker and Cyber Risk Consultant.</p>
+                                        <!-- <a href="#" class="theme-btn">
+                                            <i class="iconoir-arrow-up-right"></i>
+                                        </a> -->
+                                        <a href="{% url "web:services" %}" class="theme-btn btn-sm " style="width: auto;"> Enroll Now
+                                            <i class="iconoir-arrow-up-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="web_designing" role="tabpanel" aria-labelledby="web_designing-tab">
+                            <div class="case-studio-body d-flex">
+                                <div class="left d-flex flex-1">
+                                    <div class="row row-cols-1 row-cols-lg-2 g-3">
+                                        <div class="col">
+                                            <div class="service-card simple-shadow">
+                                                <h3><a href="{% url "web:services" %}">Robotics</a></h3>
+                                                <p>mechanical design, embedded programming, AI integration, and automation.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                        <div class="service-card simple-shadow">
+                                            <h3><a href="{% url "web:services" %}">Internet of Things (IOT)</a></h3>
+                                            <p>IOT protocols, sensor networks, cloud computing and data analytics.</p>
+                                        </div>
+                                        </div>
+                                        <div class="col">
+                                        <div class="service-card simple-shadow">
+                                            <h3><a href="{% url "web:services" %}">Embedded Systems</a></h3>
+                                            <p>microcontroller programming, real-time operating systems (RTOS), 
+                                               circuit design, and firmware development.</p>
+                                        </div>
+                                        </div>
+                                        <div class="col">
+                                        <div class="service-card simple-shadow">
+                                            <h3><a href="{% url "web:services" %}">Smart Home Automation</a></h3>
+                                            <p>home automation protocols, IoT integration, 
+                                               AI-driven smart assistants, and wireless communication.</p>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <div class="case-studio-contents service-card card-h">
+                                        <img src="{% static 'assets/imgs/service-icon-4.svg' %} " alt="ICON" />
+                                        <h3>Robotics</h3>
+                                        <p>At Semester Integrated Technologies, we shall equip you with the skills to design, 
+                                            build, and program intelligent robotic systems. Also train you mechanical design, embedded programming, AI integration and 
+                                            automation and prepare you for careers in industrial automation, healthcare robotics, drone technology, 
+                                            and AI-driven robotics solutions.</p>
+                                        <!-- <a href="#" class="theme-btn">
+                                            <i class="iconoir-arrow-up-right"></i>
+                                        </a> -->
+                                        <a href="{% url "web:services" %}" class="theme-btn btn-sm " style="width: auto;"> Enroll Now
+                                            <i class="iconoir-arrow-up-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="it_support" role="tabpanel" aria-labelledby="it_support-tab">
+                            <div class="case-studio-body d-flex">
+                                <div class="left d-flex flex-1">
+                                    <div class="row row-cols-1 row-cols-lg-2 g-3">
+                                        <div class="col">
+                                            <div class="service-card simple-shadow">
+                                                <h3><a href="{% url "web:services" %}">Digital Marketing and Branding</a></h3>
+                                                <p>SEO, social media marketing, content strategy, 
+                                                   paid advertising, and brand storytelling</p>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                        <div class="service-card simple-shadow">
+                                            <h3><a href="{% url "web:services" %}">Product Design</a></h3>
+                                            <p>UI/UX principles, wireframing, prototyping and human-computer interaction also
+                                                tools like Figma, Adobe XD, and Sketch.</p>
+                                        </div>
+                                        </div>
+                                        <div class="col">
+                                        <div class="service-card simple-shadow">
+                                            <h3><a href="{% url "web:services" %}">Product Management</a></h3>
+                                            <p>Product roadmaps, conduct market research, define features, and oversee product lifecycles.</p>
+                                        </div>
+                                        </div>
+                                        <div class="col">
+                                        <div class="service-card simple-shadow">
+                                            <h3><a href="{% url "web:services" %}">Project Management</a></h3>
+                                            <p>Agile, Scrum, PMP, and PRINCE2 methodologies.</p>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <div class="case-studio-contents service-card card-h">
+                                        <img src="{% static 'assets/imgs/service-icon-5.svg' %} " alt="ICON" />
+                                        <h3>Management</h3>
+                                        <p>At Semester Integrated Technologies,you will take your organization to the level
+                                            with our comprehensive management program from elevating your Online presence and crafting
+                                            user-centered digital experiences, to developing successful products and delivering Projects
+                                            efficiently, our expert-led training equip you with the skills to drive business growth and achieve success.</p>
+                                        <a href="#" class="theme-btn">
+                                            <i class="iconoir-arrow-up-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Feature -->
+        <section class="feature2-area">
+            <img src="{% static 'assets/imgs/bg-shape-feature.svg' %} " alt="Shape" class="bg-shape" />
+            <div class="custom-container">
+                <div class="custom-row">
+                    <div class="feature2-content">
+                        <div class="feature2-header">
+                            <h5 class="section-subtitle">CONSULTING EXCELLENCE</h5>
+                            <h1 class="section-title">Build a tech solution that <br>
+                                shape your digital world.</h1>
+                        </div>
+
+                        <div class="feature2-content-body d-flex flex-wrap g-5">
+                            <div class="feature2-card">
+                                <span class="icon">
+                                    <img src="{% static 'assets/imgs/hwd-icon-1.svg' %} " alt="Icon"/>
+                                </span>
+                                <h3>Bridging the Gap</h3>
+                                <p>Connecting People, Technology, and Business. We strive to bridge the gap between innovation and practicality, making technology accessible and beneficial for all.</p>
+                            </div>
+                            <div class="feature2-card">
+                                <span class="icon">
+                                    <img src="{% static 'assets/imgs/hwd-icon-4.svg' %} " alt="Icon"/>
+                                </span>
+                                <h3>Empowerment</h3>
+                                <p>Unleashing Potential, Enhancing Lives. We empower individuals, teams, and organizations to reach their full potential through technology, training, and support.</p>
+                            </div>
+                            <div class="feature2-card">
+                                <span class="icon">
+                                    <img src="{% static 'assets/imgs/hwd-icon-6.svg' %} " alt="Icon"/>
+                                </span>
+                                <h3>Growth</h3>
+                                <p>Fostering Continuous Learning and Improvement. We prioritize growth, embracing new ideas, technologies, and challenges to drive innovation and excellence.</p>
+                            </div>
+                            <div class="feature2-card">
+                                <span class="icon">
+                                    <img src="{% static 'assets/imgs/hwd-icon-2.svg' %} " alt="Icon"/>
+                                </span>
+                                <h3>Innovative Solutions</h3>
+                                <p>Transforming Challenges into Opportunities. We develop cutting-edge solutions that address real-world problems, making a meaningful impact on people's lives and businesses.</p>
+                            </div>
+                            <div class="feature2-card">
+                                <span class="icon">
+                                    <img src="{% static 'assets/imgs/hwd-icon-1.svg' %} " alt="Icon"/>
+                                </span>
+                                <h3>Strategic Partnerships</h3>
+                                <p>Collaborating for Mutual Success. We build strong, lasting partnerships with our clients, vendors, and community, working together to achieve shared goals and create a brighter future.</p>
+                            </div>
+                            <div class="feature2-card">
+                                <span class="icon">
+                                    <img src="{% static 'assets/imgs/hwd-icon-4.svg' %} " alt="Icon"/>
+                                </span>
+                                <h3> Customer Support</h3>
+                                <p>Your Success is Our Priority. We are committed to delivering exceptional customer experiences, providing timely support, and ensuring seamless solutions that meet your evolving needs.</p>
+                            </div>
+                            <div class="feature2-card">
+                                <span class="icon">
+                                    <img src="{% static 'assets/imgs/hwd-icon-6.svg' %} " alt="Icon"/>
+                                </span>
+                                <h3>Teamwork</h3>
+                                <p>United We Thrive. We foster a culture of collaboration, open communication, and mutual respect, recognizing that together, we can achieve greatness and drive success.</p>
+                            </div>
+                            <div class="feature2-card">
+                                <span class="icon">
+                                    <img src="{% static 'assets/imgs/hwd-icon-2.svg' %} " alt="Icon"/>
+                                </span>
+                                <h3>Ethical</h3>
+                                <p>We are aware of our impact on the environment. We provide an honest and consultative approach to our sales cycle and support processes to ensure we are advising customer on the best solutions for them.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                   
+                </div>
+            </div>
+        </section>
+
+
+
+         <!-- Testimonial -->
+         <section class="testimonial-area ">
+            <div class="custom-container">
+                <div class="section-header text-center mb-5">
+                    <h5 class="section-subtitle mb-2">TESTIMONIAL</h5>
+                    <h1 class="section-title mb-2">What people think about us</h1>
+                    <p style="margin: auto;">Their professionalism and commitment to our success were evident <br> throughout the entire process.</p>
+                </div>
+            </div>
+
+            <div class="testimonial-slider-wrap">
+                <div class="testimonial-slider swiper">
+                    
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide testimonial-item p-2 p-lg-3">
+                            <div class="testimonial-item-body">
+                                <img class="animation-slide-right bg-shape" src="{% static 'assets/imgs/bg-shape-3.svg' %} " alt="Shape"/>
+                                
+                                <p>Semester Technologies has been an invaluable partner in our digital transformation journey. Their tailored solutions, expertise, and dedication have helped us achieve remarkable results.</p>
+                                <div class="author-box d-flex align-items-center">
+                                    <img src="{% static 'assets/imgs/testimonial-1.jpg' %} " alt="Testimonial"/>
+                                    <div class="author-box-content">
+                                        <h4>Glory</h4>
+                                        <p>Data Analyst</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide testimonial-item p-2 p-lg-3">
+                            <div class="testimonial-item-body">
+                                <img class="animation-slide-right bg-shape" src="{% static 'assets/imgs/bg-shape-3.svg' %} " alt="Shape"/>
+                                
+                                <p>SemesterTech delivered an outstanding web application that transformed our business operations. Their expertise, attention to detail, and support were exceptional.</p>
+                                <div class="author-box d-flex align-items-center">
+                                    <img src="{% static 'assets/imgs/testimonial-1.jpg' %} " alt="Testimonial"/>
+                                    <div class="author-box-content">
+                                        <h4>Endurance</h4>
+                                        <p>Project Manager</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide testimonial-item p-2 p-lg-3">
+                            <div class="testimonial-item-body">
+                                <img class="animation-slide-right bg-shape" src="{% static 'assets/imgs/bg-shape-3.svg' %} " alt="Shape"/>
+                                
+                                <p>Their ability to simplify complex challenges and provide strategic solutions is unmatched. Highly recommended.</p>
+                                <div class="author-box d-flex align-items-center">
+                                    <img src="{% static 'assets/imgs/testimonial-1.jpg' %} " alt="Testimonial"/>
+                                    <div class="author-box-content">
+                                        <h4>Godwill</h4>
+                                        <p>Software developer</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+                
+                <!-- navigation buttons -->
+                <div class="swiper-button-prev"><i class="iconoir-arrow-left"></i></div>
+                <div class="swiper-button-next"><i class="iconoir-arrow-right"></i></div>
+            </div>
+
+        </section>
+       
+{% endblock content %}
+
+
