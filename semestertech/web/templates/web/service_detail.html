@@ -1,0 +1,98 @@
+{% extends 'web/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-success text-white">
+                    <h3 class="mb-0">{{ service.name }}</h3>
+                </div>
+                <div class="card-body">
+                    <div class="mb-4">
+                        <h5>Service Description</h5>
+                        <p>{{ service.description }}</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h5>Duration</h5>
+                        <p>{{ service.duration }}</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h5>What's Included</h5>
+                        <ul>
+                            <li>Professional consultation</li>
+                            <li>Customized solutions</li>
+                            <li>Implementation support</li>
+                            <li>Follow-up assistance</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h5>Process</h5>
+                        <ol>
+                            <li>Request the service</li>
+                            <li>Complete payment</li>
+                            <li>Our team reviews your requirements</li>
+                            <li>Work begins on your project</li>
+                            <li>Regular updates through your dashboard</li>
+                            <li>Final delivery and follow-up</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card shadow">
+                <div class="card-header bg-light">
+                    <h4 class="mb-0">Service Details</h4>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <h5 class="text-success">${{ service.price }}</h5>
+                    </div>
+                    
+                    {% if pending_request %}
+                        {% if pending_request.status == 'pending' %}
+                            <div class="alert alert-warning">
+                                <i class="fas fa-exclamation-circle"></i> You have a pending request for this service
+                            </div>
+                            <a href="" class="btn btn-success btn-lg btn-block mb-3">Complete Payment</a>
+                        {% elif pending_request.status == 'in_progress' %}
+                            <div class="alert alert-info">
+                                <i class="fas fa-cog fa-spin"></i> This service is currently in progress
+                            </div>
+                            <a href="{% url 'web:dashboard' %}" class="btn btn-primary btn-lg btn-block">View Status</a>
+                        {% else %}
+                            <div class="alert alert-success">
+                                <i class="fas fa-check-circle"></i> This service has been completed
+                            </div>
+                            <a href="{% url 'web:dashboard' %}" class="btn btn-primary btn-lg btn-block">View Details</a>
+                        {% endif %}
+                    {% else %}
+                        <a href="{% url 'web:request_service' service.id %}" class="btn btn-success btn-lg btn-block">Request This Service</a>
+                    {% endif %}
+                </div>
+            </div>
+            
+            <div class="card shadow mt-4">
+                <div class="card-header bg-light">
+                    <h4 class="mb-0">Why Choose Us</h4>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Professional expertise</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Timely delivery</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Customized solutions</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Ongoing support</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Satisfaction guarantee</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

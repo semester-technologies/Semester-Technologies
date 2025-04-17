@@ -1,0 +1,87 @@
+{% extends 'web/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-success text-white">
+                    <h3 class="mb-0">Complete Your Service Request</h3>
+                </div>
+                <div class="card-body">
+                    <div class="mb-4">
+                        <h4>Service Details</h4>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h5>{{ service.name }}</h5>
+                                <p>{{ service.description|truncatechars:200 }}</p>
+                                <p><strong>Estimated Duration:</strong> {{ service.duration }}</p>
+                            </div>
+                            <div class="col-md-4 text-end">
+                                <h4 class="text-success">${{ service.price }}</h4>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h4>Payment Information</h4>
+                        <hr>
+                        <form id="payment-form" method="POST" action="{% url 'web:process_payment' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="payment_type" value="service">
+                            <input type="hidden" name="item_id" value="{{ service.id }}">
+                            <input type="hidden" name="amount" value="{{ service.price }}">
+                            
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="card-name" class="form-label">Name on Card</label>
+                                    <input type="text" class="form-control" id="card-name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="card-number" class="form-label">Card Number</label>
+                                    <input type="text" class="form-control" id="card-number" placeholder="XXXX XXXX XXXX XXXX" required>
+                                </div>
+                            </div>
+                            
+                            <div class="row mb-3">
+                                <div class="col-md-4">
+                                    <label for="expiry-month" class="form-label">Expiry Month</label>
+                                    <select class="form-select" id="expiry-month" required>
+                                        <option value="">Month</option>
+                                        {% for i in "123456789101112"|make_list %}
+                                            <option value="{{ i }}">{{ i }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="expiry-year" class="form-label">Expiry Year</label>
+                                    <select class="form-select" id="expiry-year" required>
+                                        <option value="">Year</option>
+                                        {% for i in "123456"|make_list %}
+                                            <option value="202{{ i }}">202{{ i }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="cvv" class="form-label">CVV</label>
+                                    <input type="text" class="form-control" id="cvv" placeholder="XXX" required>
+                                </div>
+                            </div>
+                            
+                            <div class="alert alert-info">
+                                <i class="fas fa-info-circle"></i> This is a demonstration form. No actual payment will be processed.
+                            </div>
+                            
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-success btn-lg">Complete Payment</button>
+                                <a href="{% url 'web:service_detail' service.id %}" class="btn btn-outline-secondary">Cancel</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

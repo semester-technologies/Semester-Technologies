@@ -137,18 +137,18 @@
                         <div class="hero-contact-form">
                             <h5 class="section-subtitle">Seamlessly ogin into your account below</h5>
                             <h1 class="section-title">Lets get you started</h1>
-                            <p>You can reach us anytime via <a href="mailto:sales@semestertech.ng">sales@semestertech.ng</a></p>
                             <form action="" method="POST" class="contact-form">
                                 {% csrf_token %}
                                 <div class="input-main-row">
-                                    {% if messages %}
-                                        <ul>
-                                            {% for message in messages %}
-                                                <li>{{ message }}</li>
-                                            {% endfor %}
-                                        </ul>
-                                    {% endif %}
-                                    
+                                    <div class="input-row">
+                                        {% if messages %}
+                                            <div class="input-group alert-notification">
+                                                {% for message in messages %}
+                                                <div id="alert-message" class="alert-msg">{{ message }}</div>
+                                                {% endfor %}
+                                            </div>
+                                        {% endif %}
+                                    </div>
                                     <div class="input-row">
                                         <div class="input-group">
                                             <label for="email">Email</label>
@@ -174,12 +174,9 @@
                                             <button class="theme-btn" type="submit">Sign-In</button>
                                         </div>
                                     </div>
-                                    <!-- Alert Message -->
-                                    <div class="input-row">
-                                        <div class="input-group alert-notification">
-                                            <div id="alert-message" class="alert-msg"></div>
-                                        </div>
-                                    </div>
+                                    <p>Don't have an account? <a href="{% url 'web:register_user' %}">Register</a></p>
+
+                                    
                                 </div>
 
                             </form>
@@ -347,7 +344,6 @@
     <script src="{% static 'assets/js/swiper-bundle.min.js' %} "></script>
     <script src="{% static 'assets/js/client-marquee.js' %} "></script>
     <script src="{% static 'assets/js/theme-custom.js' %} "></script>
-    <script src="{% static 'assets/js/form1.js' %} "></script>
     <script src="{% static 'assets/js/subscribe-form.js' %} "></script>
 </body>
 

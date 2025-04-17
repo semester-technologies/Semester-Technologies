@@ -145,17 +145,18 @@
                         <div class="hero-contact-form">
                             <h5 class="section-subtitle">Register for a cousre</h5>
                             <h1 class="section-title">Lets get you registered </h1>
-                            <p>You can reach us anytime via <a href="mailto:sales@semestertech.ng">sales@semestertech.ng</a></p>
                             <form action="" method="POST" class="contact-form">
                                 {% csrf_token %}
                                 <div class="input-main-row">
-                                    {% if messages %}
-                                        <ul>
-                                            {% for message in messages %}
-                                                <li>{{ message }}</li>
-                                            {% endfor %}
-                                        </ul>
-                                    {% endif %}
+                                    <div class="input-row">
+                                        {% if messages %}
+                                            <div class="input-group alert-notification">
+                                                {% for message in messages %}
+                                                <div id="alert-message" class="alert-msg">{{ message }}</div>
+                                                {% endfor %}
+                                            </div>
+                                        {% endif %}
+                                    </div>
                                     <div class="input-row">
                                         <div class="input-group">
                                             <label for="first_name">First Name</label>
@@ -219,12 +220,8 @@
                                             <button class="theme-btn" type="submit">Get Started</button>
                                         </div>
                                     </div>
-                                    <!-- Alert Message -->
-                                    <div class="input-row">
-                                        <div class="input-group alert-notification">
-                                            <div id="alert-message" class="alert-msg"></div>
-                                        </div>
-                                    </div>
+                                    <p>Already have an account? <a href="{% url 'web:login_user' %}">Login</a></p>
+                                    
                                 </div>
 
                             </form>
@@ -392,7 +389,6 @@
     <script src="{% static 'assets/js/swiper-bundle.min.js' %} "></script>
     <script src="{% static 'assets/js/client-marquee.js' %} "></script>
     <script src="{% static 'assets/js/theme-custom.js' %} "></script>
-    <script src="{% static 'assets/js/form1.js' %} "></script>
     <script src="{% static 'assets/js/subscribe-form.js' %} "></script>
 </body>
 

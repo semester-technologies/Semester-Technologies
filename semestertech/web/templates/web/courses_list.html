@@ -1,0 +1,51 @@
+{% extends 'web/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Available Courses</h2>
+            <p class="lead">Browse through our selection of professional courses</p>
+            <hr>
+        </div>
+    </div>
+    
+    <div class="row">
+        {% for course in courses %}
+        <div class="col-md-6 mb-4">
+            <div class="card h-100 shadow">
+                <div class="card-header bg-light">
+                    <h5 class="card-title mb-0">{{ course.name }}</h5>
+                    <h6 class="card-subtitle text-muted">{{ course.code }}</h6>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <strong>Duration:</strong> {{ course.duration }}
+                    </div>
+                    <div class="mb-3">
+                        <strong>Price:</strong> ₦{{ course.price }}
+                    </div>
+                    <p class="card-text">{{ course.description|truncatechars:150 }}</p>
+                </div>
+                <div class="card-footer bg-white">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <a href="{% url 'web:course_detail' course.id %}" class="btn btn-primary">View Details</a>
+                            <a href="{% url 'web:download_brochure' course.id %}" class="btn btn-outline-secondary">Download Brochure</a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12">
+            <div class="alert alert-info">
+                No courses available at the moment. Please check back later.
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

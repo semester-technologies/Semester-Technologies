@@ -2469,7 +2469,7 @@
     }
 }
 
-@media (max-width: 1345px) {
+@media (max-width: 1250px) {
     .header-area {
         padding: 10px 0;
     }
@@ -4121,7 +4121,7 @@
 }
 
 /* Tablet Layout: 768px. FIXED CODE*/
-@media only screen and (min-width: 912px) and (max-width: 1346px) {
+@media only screen and (min-width: 912px) and (max-width: 1190px) {
 
 .header-area .navbar-wrapper ul li .mega-menu .mega-menu-inner .custom-container,
     .header-area .navbar-wrapper ul li .mega-menu .mega-menu-inner .mega-menu-link-wrap {
