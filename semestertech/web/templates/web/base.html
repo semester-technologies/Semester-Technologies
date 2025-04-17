@@ -69,7 +69,7 @@
         <!-- Header -->
         <header class="header-area">
 
-            <div class="custom-container">
+            {% comment %} <div class="custom-container">
                 <div class="custom-row align-items-center justify-content-between">
                     <div class="header-left d-flex align-items-center">
                         <a href="{% url 'web:index' %}" class="logo">
@@ -122,11 +122,96 @@
                                 </a>
                                 +2347060928686
                             </div>
+
+                            {% if user.is_authenticated %}
+                            <a href="{% url 'web:logout_user' %}" class="theme-btn">Logout</a>
+                        {% else %}
                             <a href="{% url 'web:contact' %}" class="theme-btn">Contact Us</a>
+                        {% endif %}
+                        
                         </div>
                     </div>
                 </div>
+            </div> {% endcomment %}
+            <div class="custom-container">
+                <div class="custom-row align-items-center justify-content-between">
+            
+                    <div class="header-left d-flex align-items-center">
+                        <a href="{% url 'web:index' %}" class="logo">
+                            <img src="{% static 'assets/imgs/semester.png' %}" alt="Logo" />
+                        </a>
+            
+                        <div class="header-left-right">
+                            <a href="{% url 'web:contact' %}" class="theme-btn">Contact Us</a>
+                            <span class="menu-bar">
+                                <i class="las la-bars"></i>
+                            </span>
+                        </div>
+                    </div>
+            
+                    <!-- ✨ NEW centered nav here -->
+                    <div class="d-flex justify-content-center flex-grow-1">
+                        <nav class="navbar-wrapper">
+                            <span class="close-menu-bar">
+                                <i class="las la-times"></i>
+                            </span>
+                            <ul class="d-flex gap-4 align-items-center">
+                                {% if user.is_authenticated %}
+                                    <li>
+                                        <a href="{% url 'web:index' %}">Home</a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'web:dashboard' %}">Dashboard</a>
+                                    </li>
+                                {% else %}
+                                <li>
+                                    <a href="{% url 'web:index' %}">Home</a>
+                                </li>
+                                    <li>
+                                        <a href="{% url 'web:services' %}">Services</a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'web:portfolio' %}">Portfolio</a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'web:about' %}">About Us</a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'web:career' %}">Career</a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'web:register_user' %}">Register</a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'web:login_user' %}">Login</a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                    </div>
+            
+                    <div class="header-right">
+                        <div class="header-contact-info d-flex align-items-center">
+                            <div class="phone-number">
+                                <a href="tel:+1-938-740-7555">
+                                    Call Us
+                                    <i class="iconoir-arrow-up-right"></i>
+                                </a>
+                                +2347060928686
+                            </div>
+            
+                            {% if user.is_authenticated %}
+                                <a href="{% url 'web:logout_user' %}" class="theme-btn">Logout</a>
+                            {% else %}
+                                <a href="{% url 'web:contact' %}" class="theme-btn">Contact Us</a>
+                            {% endif %}
+                        </div>
+                    </div>
+            
+                </div>
             </div>
+            
+            
 
         </header>
 
@@ -138,205 +223,7 @@
 
 
 
-        <!-- Contact -->
-        <section class="contact-area bg-dark">
-            <div class="custom-container">
-               
-                <div class="custom-row">
-                    <div class="contact-form-wrap shadow">
-                        <div class="hero-contact-form">
-                            <h5 class="section-subtitle">Contact</h5>
-                            <h1 class="section-title">Lets get in touch</h1>
-                            <p>You can reach us anytime via <a href="mailto:sales@semestertech.ng">sales@semestertech.ng</a></p>
-                            <form action="#" method="POST" class="contact-form d-flex">
-                                <div class="input-main-row">
-                                    <div class="input-row">
-                                        <div class="input-group">
-                                            <label for="first_name">First Name</label>
-                                            <input type="text" placeholder="First Name" id="first_name" name="first_name"/>
-                                        </div>
-                                        <div class="input-group">
-                                            <label for="last_name">Last Name</label>
-                                            <input type="text" placeholder="Last Name" id="last_name" name="last_name"/>
-                                        </div>
-                                    </div>
-                                    <div class="input-row">
-                                        <div class="input-group">
-                                            <label for="email">Email</label>
-                                            <input type="email" placeholder="Your Email" id="email" name="email"/>
-                                        </div>
-                                    </div>
-                                    <div class="input-row">
-                                        <div class="input-group">
-                                            <label for="phone_number">Phone Number</label>
-                                            <input type="text" name="phone_number" placeholder="Your Number" />
-                                        </div>
-                                        <div class="input-group">
-                                            <label for="country">Country</label>
-                                            <input type="text" name="country" placeholder="Your Country" />
-                                        </div>
-                                    </div>
-                                    <div class="input-row">
-                                        <div class="input-group">
-                                            <label>What's the type of your company?</label>
-                                            <div class="choice-a-company flex-wrap d-flex">
-                                                <div class="radio-box">
-                                                    <input type="radio" id="saas" name="choice_company" value="SAAS"/>
-                                                    <label for="saas">Healthcare</label>
-                                                </div>
-                                                <div class="radio-box">
-                                                    <input type="radio" id="banking" name="choice_company" value="Banking"/>
-                                                    <label for="banking">Fintech</label>
-                                                </div>
-                                                <div class="radio-box">
-                                                    <input type="radio" id="agency" name="choice_company" value="Agency"/>
-                                                    <label for="agency">Agency</label>
-                                                </div>
-                                                <div class="radio-box">
-                                                    <input type="radio" id="business" name="choice_company" value="Business"/>
-                                                    <label for="business">Business</label>
-                                                </div>
-                                                <div class="radio-box">
-                                                    <input type="radio" id="other" name="choice_company" value="Other"/>
-                                                    <label for="other">Other</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                                <div class="input-main-row">
-                                    <div class="input-row">
-                                        <div class="input-group">
-                                            <label>What you need from us?</label>
-                                            <div class="feedback-checkboxes d-flex flex-wrap">
-                                                <div class="feedback-item">
-                                                    <input type="checkbox" id="app_design" name="services[]" value="Mobile App"/>
-                                                    <label for="app_design">Mobile App</label>
-                                                </div>
-                                                <div class="feedback-item">
-                                                    <input type="checkbox" id="web_design" name="services[]" value="Web Development"/>
-                                                    <label for="web_design">Web Development</label>
-                                                </div>
-                                                <div class="feedback-item">
-                                                    <input type="checkbox" id="branding" name="services[]" value="Branding"/>
-                                                    <label for="branding">Branding</label>
-                                                </div>
-                                                <div class="feedback-item">
-                                                    <input type="checkbox" id="development" name="services[]" value="Training"/>
-                                                    <label for="development">Training</label>
-                                                </div>
-                                                <div class="feedback-item">
-                                                    <input type="checkbox" id="cloud_service" name="services[]" value="Cloud service"/>
-                                                    <label for="cloud_service">Cloud service</label>
-                                                </div>
-                                                <div class="feedback-item">
-                                                    <input type="checkbox" id="other" name="services[]" value="Other"/>
-                                                    <label for="other">Other</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="input-row">
-                                        <div class="input-group">
-                                            <label for="message">Message</label>
-                                            <textarea name="message" id="message" placeholder="Leave us a message...."></textarea>
-                                        </div>
-                                    </div>
-                                   
-                                    
-                                    <div class="input-row">
-                                        <div class="input-group">
-                                            <button class="theme-btn" id="submit">Get Started</button>
-                                        </div>
-                                    </div>
-                                    <!-- Alert Message -->
-                                    <div class="input-row">
-                                        <div class="input-group alert-notification">
-                                            <div id="alert-message" class="alert-msg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    
-                    
-                    <div class="contact-experience">
-                        <ul>
-                            <li>
-                                <h1>7+ <span>Years</span></h1>
-                                <p>Field Experience </p>
-                            </li>
-                            <li>
-                                <h1>50+ <span>Projects</span></h1>
-                                <p>Done Around World </p>
-                            </li>
-                            <li>
-                                <h1>99%</h1>
-                                <p>Client Satisfaction</p>
-                            </li>
-                            <li>
-                                <h1>30+ <span>Professionals</span></h1>
-                                <p>Experienced Team</p>
-                            </li>
-                            <li>
-                                <h1>5 <span>Mins</span></h1>
-                                <p>Response Time</p>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- <div class="contact-infos">
-                        <div class="contact-infos-inner">
-                            <div class="contact-info">
-                                <img src="{% static '' %} assets/imgs/support-icon.svg" alt="Support" />
-                                <h3>Contact Info</h3>
-                                <p>
-                                    +1 455 1482 236 <br>
-                                    Bluebase@mail.com
-                                </p>
-                            </div>
-                            <div class="contact-office-info contact-info">
-                                <img src="{% static '' %} assets/imgs/map-icon.svg" alt="Map" />
-                                <h3>Visit our office</h3>
-                                <p>16/9, Down Street
-                                    Edinburgh, Scotland
-                                    United Kingdom</p>
-                            </div>
-    
-                            <ul class="contact-social-links">
-                                <li>
-                                    <a href="#">
-                                        <?xml version="1.0" encoding="UTF-8"?><i class="iconoir-dribbble"></i>
-                                        Dribbble
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <?xml version="1.0" encoding="UTF-8"?><i class="iconoir-twitter"></i>
-                                        Twitter
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <?xml version="1.0" encoding="UTF-8"?><i class="iconoir-instagram"></i>
-                                         Instagram
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <?xml version="1.0" encoding="UTF-8"?><i class="iconoir-linkedin"></i>
-                                        linkedin
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div> -->
-                </div>
-                
-            </div>
-        </section>
+       
 
 
         <!-- Footer -->
@@ -493,7 +380,7 @@
     <script src="{% static 'assets/js/swiper-bundle.min.js' %} "></script>
     <script src="{% static 'assets/js/client-marquee.js' %} "></script>
     <script src="{% static 'assets/js/theme-custom.js' %} "></script>
-    <script src="{% static 'assets/js/form1.js' %} "></script>
+    {% comment %} <script src="{% static 'assets/js/form1.js' %} "></script> {% endcomment %}
     <script src="{% static 'assets/js/subscribe-form.js' %} "></script>
 </body>
 

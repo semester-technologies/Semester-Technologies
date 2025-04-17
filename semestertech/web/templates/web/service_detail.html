@@ -1,25 +1,32 @@
 {% extends 'web/base.html' %}
 
 {% block content %}
-<div class="container mt-5">
-    
-    <div class="row">
-        <div class="col-md-8">
-            <div class="card shadow">
-                <div class="card-header bg-success text-white">
-                    <h3 class="mb-0">{{ service.name }}</h3>
-                </div>
-                <div class="card-body">
+<section class="service-area service-black-area py-5">
+    <div class="custom-container">
+        <div class="service-section-header section-header text-center mb-5">
+            <h5 class="section-subtitle">Service Details</h5>
+            <h1 class="section-title">{{ service.name }}</h1>
+        </div>
+
+        <div class="d-flex justify-content-center">
+            
+            <div class="service-card simple-shadow p-4" style="max-width: 700px; width: 100%;">
+
+                <div class="service-content">
+                    <div class="mb-4 text-center">
+                        <h3 class="mb-3">Service Overview</h3>
+                    </div>
+
                     <div class="mb-4">
                         <h5>Service Description</h5>
                         <p>{{ service.description }}</p>
                     </div>
-                    
+
                     <div class="mb-4">
                         <h5>Duration</h5>
                         <p>{{ service.duration }}</p>
                     </div>
-                    
+
                     <div class="mb-4">
                         <h5>What's Included</h5>
                         <ul>
@@ -29,7 +36,7 @@
                             <li>Follow-up assistance</li>
                         </ul>
                     </div>
-                    
+
                     <div class="mb-4">
                         <h5>Process</h5>
                         <ol>
@@ -41,58 +48,35 @@
                             <li>Final delivery and follow-up</li>
                         </ol>
                     </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4">
-            <div class="card shadow">
-                <div class="card-header bg-light">
-                    <h4 class="mb-0">Service Details</h4>
-                </div>
-                <div class="card-body">
-                    <div class="mb-3">
-                        <h5 class="text-success">${{ service.price }}</h5>
+
+                    <div class="mb-4 text-center">
+                        <h5 class="text-success">₦{{ service.price }}</h5>
                     </div>
-                    
+
                     {% if pending_request %}
                         {% if pending_request.status == 'pending' %}
-                            <div class="alert alert-warning">
+                            <div class="alert alert-warning text-center">
                                 <i class="fas fa-exclamation-circle"></i> You have a pending request for this service
                             </div>
-                            <a href="" class="btn btn-success btn-lg btn-block mb-3">Complete Payment</a>
+                            <a href="" class="btn btn-success w-100">Complete Payment</a>
                         {% elif pending_request.status == 'in_progress' %}
-                            <div class="alert alert-info">
+                            <div class="alert alert-info text-center">
                                 <i class="fas fa-cog fa-spin"></i> This service is currently in progress
                             </div>
-                            <a href="{% url 'web:dashboard' %}" class="btn btn-primary btn-lg btn-block">View Status</a>
+                            <a href="{% url 'web:dashboard' %}" class="btn btn-primary w-100">View Status</a>
                         {% else %}
-                            <div class="alert alert-success">
+                            <div class="alert alert-success text-center">
                                 <i class="fas fa-check-circle"></i> This service has been completed
                             </div>
-                            <a href="{% url 'web:dashboard' %}" class="btn btn-primary btn-lg btn-block">View Details</a>
+                            <a href="{% url 'web:dashboard' %}" class="btn btn-primary w-100">View Details</a>
                         {% endif %}
                     {% else %}
-                        <a href="{% url 'web:request_service' service.id %}" class="btn btn-success btn-lg btn-block">Request This Service</a>
+                        <a href="{% url 'web:payment_success' %}" class="btn btn-success w-100">Request This Service</a>
                     {% endif %}
-                </div>
-            </div>
-            
-            <div class="card shadow mt-4">
-                <div class="card-header bg-light">
-                    <h4 class="mb-0">Why Choose Us</h4>
-                </div>
-                <div class="card-body">
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Professional expertise</li>
-                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Timely delivery</li>
-                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Customized solutions</li>
-                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Ongoing support</li>
-                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Satisfaction guarantee</li>
-                    </ul>
+                    
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 {% endblock %}

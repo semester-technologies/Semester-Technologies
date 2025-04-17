@@ -1,84 +1,58 @@
 {% extends 'web/base.html' %}
+{% load static %}
 
 {% block content %}
-<div class="container mt-5">
-    
-    
-    <div class="row">
-        <div class="col-md-8">
-            <div class="card shadow">
-                <div class="card-header bg-primary text-white">
-                    <h3 class="mb-0">{{ course.name }}</h3>
-                </div>
-                <div class="card-body">
-                    <h5 class="text-muted mb-3">{{ course.code }}</h5>
-                    
+
+<section class="case-studio-area py-5">
+    <div class="custom-container">
+        <div class="row g-5">
+
+            <!-- Course Main Info -->
+            <div class="col-lg-8">
+                <div class="service-card simple-shadow p-4 h-100">
+                    <h1 class="section-title mb-3">{{ course.name }}</h1>
+                    <p class="text-muted mb-4">{{ course.description }}</p>
+
                     <div class="mb-4">
-                        <h5>Description</h5>
-                        <p>{{ course.description }}</p>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <h5>Duration</h5>
+                        <h5 class="fw-bold">Duration</h5>
                         <p>{{ course.duration }}</p>
                     </div>
-                    
+
                     <div class="mb-4">
-                        <h5>What You'll Learn</h5>
-                        <ul>
-                            <li>Professional skills and techniques in {{ course.name }}</li>
-                            <li>Practical experience with industry-standard tools</li>
-                            <li>How to apply {{ course.name }} in real-world scenarios</li>
-                            <li>Career opportunities in this field</li>
+                        <h5 class="fw-bold">What You'll Learn</h5>
+                        <ul class="list-unstyled ps-3">
+                            <li class="mb-2"><i class="iconoir-check-circle me-2 text-primary"></i> Professional skills in {{ course.name }}</li>
+                            <li class="mb-2"><i class="iconoir-check-circle me-2 text-primary"></i> Hands-on experience with real tools</li>
+                            <li class="mb-2"><i class="iconoir-check-circle me-2 text-primary"></i> Applying {{ course.name }} in real-world projects</li>
+                            <li><i class="iconoir-check-circle me-2 text-primary"></i> Career growth opportunities</li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <div class="col-md-4">
-            <div class="card shadow mb-4">
-                <div class="card-header bg-light">
-                    <h4 class="mb-0">Course Details</h4>
-                </div>
-                <div class="card-body">
-                    <div class="mb-3">
-                        <h5 class="text-primary">₦{{ course.price }}</h5>
-                    </div>
-                    
+
+            <!-- Sidebar Info -->
+            <div class="col-lg-4">
+                <div class="service-card card-h p-4 text-center h-100">
+                    <img src="{% static 'assets/imgs/service-icon-1.svg' %}" alt="{{ course.name }}" class="img-fluid mb-3" style="max-height: 200px; object-fit: contain;">
+
+                    <h4 class="mb-2 text-primary">₦{{ course.price|floatformat:2 }}</h4>
+
                     {% if is_registered %}
-                        <div class="alert alert-success">
-                            <i class="fas fa-check-circle"></i> You are registered for this course
+                        <div class="alert alert-success mt-3">
+                            <i class="iconoir-check-circle"></i> You are already registered
                         </div>
                     {% else %}
-                        <a href="" class="btn btn-primary btn-lg btn-block mb-3">Register Now</a>
+                        <a href="{% url 'web:payment_success' %}" class="theme-btn btn-sm d-block mb-3">Register Now</a>
                     {% endif %}
-                    
-                    <a href="{% url 'web:download_brochure' course.id %}" class="btn btn-outline-secondary btn-block mb-3">
-                        <i class="fas fa-download"></i> Download Brochure
+
+                    <a href="{% url 'web:download_brochure' course.id %}" class="theme-btn btn-sm btn-outline-secondary d-block">
+                        <i class="iconoir-download me-1"></i> Download Brochure
                     </a>
-                    
-                   
                 </div>
             </div>
-            
-            <div class="card shadow">
-                <div class="card-header bg-light">
-                    <h4 class="mb-0">Course Includes</h4>
-                </div>
-                <div class="card-body">
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><i class="fas fa-video text-primary me-2"></i> Video lectures</li>
-                        <li class="mb-2"><i class="fas fa-file-alt text-primary me-2"></i> Study materials</li>
-                        <li class="mb-2"><i class="fas fa-tasks text-primary me-2"></i> Practical assignments</li>
-                        <li class="mb-2"><i class="fas fa-certificate text-primary me-2"></i> Completion certificate</li>
-                        <li class="mb-2"><i class="fas fa-users text-primary me-2"></i> Community access</li>
-                    </ul>
-                </div>
-            </div>
+
         </div>
     </div>
-</div>
-
+</section>
 
 {% endblock %}

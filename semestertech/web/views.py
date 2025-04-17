@@ -12,6 +12,7 @@ from django.urls import reverse
 from django.http import HttpResponse
 from django.conf import settings
 from .models import Course, Service, CourseRegistration, ServiceRequest, SavedCourse
+from collections import defaultdict
 
 
 # Create your views here.
@@ -87,42 +88,57 @@ def login_user(request):
 
     return render(request, 'web/login.html')
 
+
+
 def logout_user(request):
-    logout(request)
-    return redirect('web:login_user')
+    logout(request) 
+    return redirect('web:login_user')  
 
 @login_required
 def dashboard(request):
     user_profile = request.user.userprofile
-    is_first_login = user_profile.is_first_login
+    # is_first_login = user_profile.is_first_login
     
-    if is_first_login:
-        user_profile.is_first_login = False
-        user_profile.save()
-        return render(request, 'web/dashboard_first_login.html')
-    else:
-        registered_courses = CourseRegistration.objects.filter(user=request.user, payment_status='completed')
-        requested_services = ServiceRequest.objects.filter(user=request.user)
-        saved_courses = SavedCourse.objects.filter(user=request.user)
-        
-        context = {
-            'registered_courses': registered_courses,
-            'requested_services': requested_services,
-            'saved_courses': saved_courses
-        }
-        return render(request, 'web/dashboard.html', context)
+    # if is_first_login:
+    #     user_profile.is_first_login = False
+    #     user_profile.save()
+    #     return render(request, 'web/dashboard_first_login.html')
+    # else:
+    registered_courses = CourseRegistration.objects.filter(user=request.user, payment_status='completed')
+    requested_services = ServiceRequest.objects.filter(user=request.user)
+    saved_courses = SavedCourse.objects.filter(user=request.user)
+    
+    context = {
+        'registered_courses': registered_courses,
+        'requested_services': requested_services,
+        'saved_courses': saved_courses
+    }
+    return render(request, 'web/dashboard.html', context)
 
 
 @login_required
 def courses_list(request):
+    categories = [
+        {'id': 'software_development', 'name': 'Software Development', 'description': 'At Semester Tech, you will learn how to create a dynamic,responsive and user friendly website and applications. We have tech expert that will teach and guide you on how to design a stunning website, build a robust web application also to develop a mobile and desktop apps.', 'image': 'assets/imgs/service-icon-1.svg'},
+        {'id': 'data_science', 'name': 'Data Science', 'description': 'Semester Integrated Technologies, you will learn how to analyze, visualize, and derive insights from data to drive decision-making and innovation then also to Unlock the power of data with our comprehensive Data Science programs.', 'image': 'assets/imgs/service-icon-2.svg'},
+        {'id': 'cyber_security', 'name': 'Cyber Security', 'description': 'At Semester Integrated Technologies, we provide in-depth training on network security, encryption, risk management, and cybersecurity frameworks also our programs prepare you for roles such as Security Analyst, Network Security Engineer, penetration tester, ethical hacker and Cyber Risk Consultant.', 'image': 'assets/imgs/service-icon-3.svg'},
+        {'id': 'robotics', 'name': 'Robotics', 'description': 'At Semester Integrated Technologies, we shall equip you with the skills to design, build, and program intelligent robotic systems. Also train you mechanical design, embedded programming, AI integration and automation and prepare you for careers in industrial automation, healthcare robotics, drone technology, and AI-driven robotics solutions.', 'image': 'assets/imgs/service-icon-4.svg'},
+        {'id': 'management', 'name': 'Management', 'description': 'At Semester Integrated Technologies,you will take your organization to the level with our comprehensive management program from elevating your Online presence and crafting user-centered digital experiences, to developing successful products and delivering Projects efficiently, our expert-led training equip you with the skills to drive business growth and achieve success.', 'image': 'assets/imgs/service-icon-5.svg'},
+    ]
+
+    # Group courses by category
     courses = Course.objects.all()
-    saved_courses = SavedCourse.objects.filter(user=request.user).values_list('course_id', flat=True)
-    
+    courses_by_category = defaultdict(list)
+    for course in courses:
+        courses_by_category[course.category].append(course)
+
     context = {
-        'courses': courses,
-        'saved_courses': saved_courses
+        'categories': categories,
+        'courses_by_category': courses_by_category,
     }
     return render(request, 'web/courses_list.html', context)
+
+
 
 @login_required
 def course_detail(request, course_id):
@@ -269,3 +285,12 @@ def send_service_confirmation_email(user, service):
         [user.email],
         fail_silently=False,
     )
+
+@login_required
+def payment_success(request):
+    return render(request, 'web/payment_success.html')
+
+
+
+
+

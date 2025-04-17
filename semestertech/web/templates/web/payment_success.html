@@ -1,0 +1,24 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="case-studio-area py-5">
+    <div class="custom-container d-flex justify-content-center">
+        <div class="service-card simple-shadow text-center p-5" style="max-width: 600px;">
+
+            {% comment %} <img src="{% static 'images/success_checkmark.svg' %}" alt="Success" class="img-fluid mb-4" style="width: 120px;"> {% endcomment %}
+
+            <h1 class="section-title mb-3">Payment Successful!</h1>
+            <p class="text-muted mb-4">Congratulations {{ request.user.first_name|default:request.user.username }}, your payment was received successfully. Welcome aboard!</p>
+
+            <a href="{% url 'web:courses_list' %}" class="theme-btn btn-sm" style="width: auto;">
+                Browse More Courses
+                <i class="iconoir-arrow-up-right"></i>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}
