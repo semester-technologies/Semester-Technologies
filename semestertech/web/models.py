@@ -1,6 +1,30 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+# class Course(models.Model):
+#     CATEGORY_CHOICES = (
+#         ('software_development', 'Software Development'),
+#         ('data_science', 'Data Science'),
+#         ('cyber_security', 'Cyber Security'),
+#         ('robotics', 'Robotics'),
+#         ('management', 'Management'),
+#     )
+
+#     name = models.CharField(max_length=100)
+#     code = models.CharField(max_length=10, blank=True, null=True)
+#     price = models.DecimalField(max_digits=10, decimal_places=2)
+#     description = models.TextField()
+#     duration = models.CharField(max_length=200)
+#     category = models.CharField(max_length=50, choices=CATEGORY_CHOICES, default='software_development')
+#     image = models.ImageField(upload_to='course_images/', blank=True, null=True)  # <<== added here
+
+
+#     def __str__(self):
+#         return f"{self.code} - {self.name}"
+
+
+import datetime  # <== if you need for start_date default
+
 class Course(models.Model):
     CATEGORY_CHOICES = (
         ('software_development', 'Software Development'),
@@ -13,12 +37,52 @@ class Course(models.Model):
     name = models.CharField(max_length=100)
     code = models.CharField(max_length=10, blank=True, null=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    description = models.TextField()
-    duration = models.CharField(max_length=200)
+    description = models.TextField(help_text="Brief description of the course.")
+    duration = models.CharField(max_length=200, help_text="E.g., '6 weeks', '3 months'")
     category = models.CharField(max_length=50, choices=CATEGORY_CHOICES, default='software_development')
+    image1 = models.ImageField(upload_to='course_images/', blank=True, null=True)
+    image2 = models.ImageField(upload_to='course_images/', blank=True, null=True)
+    image3 = models.ImageField(upload_to='course_images/', blank=True, null=True)
+    image4 = models.ImageField(upload_to='course_images/', blank=True, null=True)
+
+
+    start_date = models.DateField(help_text="Course official start date.", default=datetime.date.today)
+    hour_commitment = models.IntegerField(help_text="Estimated total hours required to complete the course.", default=40)
+    course_outline = models.TextField(help_text="Detailed breakdown of what the course covers.", default='Course outline coming soon.')
+    program_requirements = models.TextField(help_text="Requirements to enroll for the course (skills, prior knowledge, etc.).", default='No special requirements.')
+    why_take_this_course = models.TextField(help_text="Persuasive reasons why someone should take this course.", default='Details coming soon.')
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    is_active = models.BooleanField(default=True, help_text="Uncheck to deactivate this course.")
+
 
     def __str__(self):
-        return f"{self.code} - {self.name}"
+        return f"{self.code or ''} {self.name}"
+
+    class Meta:
+        ordering = ['-created_at']
+
+
+
+class Curriculum(models.Model):
+    course = models.ForeignKey(Course, related_name="curriculum", on_delete=models.CASCADE)
+    week_number = models.PositiveIntegerField()
+    title = models.CharField(max_length=255, help_text="Title for this week e.g., 'Introduction to Python'")
+    content = models.TextField(help_text="Detailed content for this week.")
+
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['week_number']
+
+    def __str__(self):
+        return f"Week {self.week_number}: {self.title}"
+
+
+
+
 
 
 class Student(models.Model):

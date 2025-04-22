@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 
-<section class="case-studio-area">
+<section class="case-studio-area" style="background-color: black;">
     <div class="custom-container">
         <div class="case-studio">
             <div class="tab-content case-studio-tab-content">
@@ -12,95 +12,117 @@
 
                         <!-- Registered Courses Section -->
                         <div class="right m-3">
-                            <div class="case-studio-contents service-card card-h">
-                                <h4 class="text-success mb-3">My Registered Courses</h4>
-                                {% if registered_courses %}
-                                    <div class="table-responsive">
-                                        <table class="table table-hover">
-                                            <thead>
-                                                <tr>
-                                                    <th>Course Name</th>
-                                                    <th>Code</th>
-                                                    <th>Duration</th>
-                                                    <th>Registration Date</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                {% for registration in registered_courses %}
-                                                <tr>
-                                                    <td>{{ registration.course.name }}</td>
-                                                    <td>{{ registration.course.code }}</td>
-                                                    <td>{{ registration.course.duration }}</td>
-                                                    <td>{{ registration.registration_date|date:"M d, Y" }}</td>
-                                                </tr>
-                                                {% endfor %}
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                {% else %}
-                                    <p class="text-center">You have not registered for any courses yet.</p>
-                                    <div class="text-center">
-                                        <a href="{% url 'web:courses_list' %}" class="btn btn-outline-success">Browse Courses</a>
-                                    </div>
-                                {% endif %}
+                            <div class="card overflow-hidden" style="width: 22rem; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                                
+                                <!-- 📸 Image at the top -->
+                                <img src="{% static 'assets/imgs/dash2.jpg' %}" class="card-img-top" alt="Registered Courses" style="height: 220px; object-fit: cover; border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                        
+                                <!-- 📄 Card Body -->
+                                <div class="card-body text-center">
+                                    <h4 class="card-title text-success mb-3">My Registered Courses</h4>
+                        
+                                    {% if registered_courses %}
+                                        <div class="table-responsive">
+                                            <table class="table table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Course Name</th>
+                                                        <th>Code</th>
+                                                        <th>Duration</th>
+                                                        <th>Registration Date</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {% for registration in registered_courses %}
+                                                    <tr>
+                                                        <td>{{ registration.course.name }}</td>
+                                                        <td>{{ registration.course.code }}</td>
+                                                        <td>{{ registration.course.duration }}</td>
+                                                        <td>{{ registration.registration_date|date:"M d, Y" }}</td>
+                                                    </tr>
+                                                    {% endfor %}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    {% else %}
+                                        <p class="text-center">You have not registered for any courses yet.</p>
+                                        <div class="text-center mt-3">
+                                            <a href="{% url 'web:courses_list' %}" class="btn btn-outline-success">Browse Courses</a>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                        
                             </div>
                         </div>
+                        
+                        
+
 
                         <!-- Requested Services Section -->
                         <div class="right m-3">
-                            <div class="case-studio-contents service-card card-h">
-                                <h4 class="text-success mb-3">My Service Requests</h4>
-                                {% if requested_services %}
-                                    <div class="table-responsive">
-                                        <table class="table table-hover">
-                                            <thead>
-                                                <tr>
-                                                    <th>Service</th>
-                                                    <th>Request Date</th>
-                                                    <th>Status</th>
-                                                    <th>Estimated Completion</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                {% for request in requested_services %}
-                                                <tr>
-                                                    <td>{{ request.service.name }}</td>
-                                                    <td>{{ request.request_date|date:"M d, Y" }}</td>
-                                                    <td>
-                                                        {% if request.status == 'pending' %}
-                                                            <span class="badge bg-warning text-dark">Pending Payment</span>
-                                                        {% elif request.status == 'in_progress' %}
-                                                            <span class="badge bg-info">In Progress</span>
-                                                        {% else %}
-                                                            <span class="badge bg-success">Completed</span>
-                                                        {% endif %}
-                                                    </td>
-                                                    <td>
-                                                        {% if request.status == 'pending' %}
-                                                            -
-                                                        {% elif request.status == 'in_progress' %}
-                                                            {% with request.payment_date|date:"U" as payment_timestamp %}
-                                                            {% with request.service.duration as duration %}
-                                                                {{ payment_timestamp|add:duration|date:"M d, Y" }} (Est.)
-                                                            {% endwith %}
-                                                            {% endwith %}
-                                                        {% else %}
-                                                            {{ request.completion_date|date:"M d, Y" }}
-                                                        {% endif %}
-                                                    </td>
-                                                </tr>
-                                                {% endfor %}
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                {% else %}
-                                    <p class="text-center">You have not requested any services yet.</p>
-                                    <div class="text-center">
-                                        <a href="{% url 'web:services_list' %}" class="btn btn-outline-success">Browse Services</a>
-                                    </div>
-                                {% endif %}
+                            <div class="card overflow-hidden" style="width: 22rem; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                                
+                                <!-- 📸 Image at the top -->
+                                <img src="{% static 'assets/imgs/dash1.jpg' %}" class="card-img-top" alt="Service Requests" style="height: 220px; object-fit: cover; border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                        
+                                <!-- 📄 Card Body -->
+                                <div class="card-body text-center">
+                                    <h4 class="card-title text-success mb-3">My Service Requests</h4>
+                        
+                                    {% if requested_services %}
+                                        <div class="table-responsive">
+                                            <table class="table table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Service</th>
+                                                        <th>Request Date</th>
+                                                        <th>Status</th>
+                                                        <th>Estimated Completion</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {% for request in requested_services %}
+                                                    <tr>
+                                                        <td>{{ request.service.name }}</td>
+                                                        <td>{{ request.request_date|date:"M d, Y" }}</td>
+                                                        <td>
+                                                            {% if request.status == 'pending' %}
+                                                                <span class="badge bg-warning text-dark">Pending Payment</span>
+                                                            {% elif request.status == 'in_progress' %}
+                                                                <span class="badge bg-info">In Progress</span>
+                                                            {% else %}
+                                                                <span class="badge bg-success">Completed</span>
+                                                            {% endif %}
+                                                        </td>
+                                                        <td>
+                                                            {% if request.status == 'pending' %}
+                                                                -
+                                                            {% elif request.status == 'in_progress' %}
+                                                                {% with request.payment_date|date:"U" as payment_timestamp %}
+                                                                {% with request.service.duration as duration %}
+                                                                    {{ payment_timestamp|add:duration|date:"M d, Y" }} (Est.)
+                                                                {% endwith %}
+                                                                {% endwith %}
+                                                            {% else %}
+                                                                {{ request.completion_date|date:"M d, Y" }}
+                                                            {% endif %}
+                                                        </td>
+                                                    </tr>
+                                                    {% endfor %}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    {% else %}
+                                        <p class="text-center">You have not requested for any services yet.</p>
+                                        <div class="text-center mt-3">
+                                            <a href="{% url 'web:services_list' %}" class="btn btn-outline-success">Browse Services</a>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                        
                             </div>
                         </div>
+                        
 
                     </div>
 

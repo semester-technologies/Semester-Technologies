@@ -18,7 +18,7 @@
                 <p>{{ service.description|truncatechars:150 }}</p>
                 <div class="mt-3">
                     <strong>Duration:</strong> {{ service.duration }}<br>
-                    <strong>Price:</strong> ${{ service.price }}
+                    <strong>Price:</strong> ₦{{ service.price }}
                 </div>
                 <div class="mt-3">
                     <a href="{% url 'web:service_detail' service.id %}" class="theme-btn btn-sm">Learn More</a>

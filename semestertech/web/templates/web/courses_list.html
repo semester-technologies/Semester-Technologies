@@ -4,11 +4,11 @@
 
 {% block content %}
 
-<section class="case-studio-area">
+<section class="case-studio-area service-black-area" style="background-color: black;">
     <div class="custom-container">
         <div class="case-studio-header text-center">
             <h5 class="section-subtitle">TRAIN WITH US</h5>
-            <h1 class="section-title">Our Course Career Paths</h1>
+            <h1 class="section-title text-white">Our Course Career Paths</h1>
         </div>
 
         <div class="case-studio">
@@ -33,22 +33,23 @@
                                 {% with courses_by_category|get_item:category.id as category_courses %}
                                     {% if category_courses %}
                                         {% for course in category_courses %}
-                                        <div class="col">
-                                            <div class="service-card simple-shadow h-100">
-                                                <h3>
-                                                    <a href="{% url 'web:course_detail' course.id %}">{{ course.name }}</a>
-                                                </h3>
-                                                <p>
-                                                    <strong>Duration:</strong> {{ course.duration }}<br>
-                                                    <strong>Price:</strong> ₦{{ course.price|floatformat:2 }}<br>
-                                                    <span>{{ course.description|truncatechars:150 }}</span>
-                                                </p>
-                                                <div class="mt-3">
-                                                    <a href="{% url 'web:course_detail' course.id %}" class="theme-btn btn-sm" style="width: auto;">Learn More</a>
-                                                    {% comment %} <a href="{% url 'web:download_brochure' course.id %}" class="btn btn-outline-secondary btn-sm">Download Brochure</a> {% endcomment %}
+                                            {% if course.is_active %}
+                                            <div class="col">
+                                                <div class="service-card simple-shadow h-100">
+                                                    <h3>
+                                                        <a href="{% url 'web:course_detail' course.id %}">{{ course.name }}</a>
+                                                    </h3>
+                                                    <p>
+                                                        <strong>Duration:</strong> {{ course.duration }}<br>
+                                                        <strong>Price:</strong> ₦{{ course.price|floatformat:2 }}<br>
+                                                        <span>{{ course.description|truncatechars:150 }}</span>
+                                                    </p>
+                                                    <div class="mt-3">
+                                                        <a href="{% url 'web:course_detail' course.id %}" class="theme-btn btn-sm" style="width: auto;">Learn More</a>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                            {% endif %}
                                         {% endfor %}
                                     {% else %}
                                         <div class="col-12">
@@ -58,6 +59,7 @@
                                         </div>
                                     {% endif %}
                                 {% endwith %}
+
                             </div>
                         </div>
 

@@ -1,58 +1,191 @@
 {% extends 'web/base.html' %}
+
+
+{% block custom_styles %}
+<style>
+@media (min-width: 699px) {
+    .how-we-do-area .how-we-do-right-content .how-we-do-items:first-child .how-we-do-card:last-child .line-shape {
+        height: 135px;
+        width: 280px;
+        right: -30px;
+    }
+}
+@media (max-width: 698px) {
+.how-we-do-area .how-we-do-right-content .how-we-do-items:first-child .how-we-do-card:last-child .line-shape {
+    height: 115px;
+    width: 50px;
+    right: -30px;
+}}
+</style>
+
+{% endblock custom_styles %}
+    
 {% load static %}
 
 {% block content %}
 
-<section class="case-studio-area py-5">
+<section class="feature-area" style="padding-top: 50px;">
     <div class="custom-container">
-        <div class="row g-5">
-
-            <!-- Course Main Info -->
-            <div class="col-lg-8">
-                <div class="service-card simple-shadow p-4 h-100">
-                    <h1 class="section-title mb-3">{{ course.name }}</h1>
-                    <p class="text-muted mb-4">{{ course.description }}</p>
-
-                    <div class="mb-4">
-                        <h5 class="fw-bold">Duration</h5>
-                        <p>{{ course.duration }}</p>
-                    </div>
-
-                    <div class="mb-4">
-                        <h5 class="fw-bold">What You'll Learn</h5>
-                        <ul class="list-unstyled ps-3">
-                            <li class="mb-2"><i class="iconoir-check-circle me-2 text-primary"></i> Professional skills in {{ course.name }}</li>
-                            <li class="mb-2"><i class="iconoir-check-circle me-2 text-primary"></i> Hands-on experience with real tools</li>
-                            <li class="mb-2"><i class="iconoir-check-circle me-2 text-primary"></i> Applying {{ course.name }} in real-world projects</li>
-                            <li><i class="iconoir-check-circle me-2 text-primary"></i> Career growth opportunities</li>
-                        </ul>
-                    </div>
+        <div class="custom-row align-items-center justify-content-center" style="min-height: 100vh; gap: 50px;">
+    
+            <div class="feature-left d-flex justify-content-center" style="flex: 1;">
+                <div class="feature-img-card" style="width: 100%; max-width: 600px;">
+                    {% if course.image1 %}
+                        <img src="{{ course.image1.url }}" alt="{{ course.name }}" style="width: 100%; height: auto; object-fit: cover;" />
+                    {% else %}
+                        <img src="{% static 'path/to/default-image.png' %}" alt="Course Image" style="width: 100%; height: auto; object-fit: cover;" />
+                    {% endif %}
                 </div>
             </div>
-
-            <!-- Sidebar Info -->
-            <div class="col-lg-4">
-                <div class="service-card card-h p-4 text-center h-100">
-                    <img src="{% static 'assets/imgs/service-icon-1.svg' %}" alt="{{ course.name }}" class="img-fluid mb-3" style="max-height: 200px; object-fit: contain;">
-
-                    <h4 class="mb-2 text-primary">₦{{ course.price|floatformat:2 }}</h4>
-
+        
+            <div class="feature-right" style="flex: 1;">
+                <div class="feature-content" style="text-align: left;">
+                    <h5 class="section-subtitle">FEATURED COURSE</h5>
+                    <h1 class="section-title">{{ course.name }}</h1>
+                    <p>{{ course.description }}</p>
+        
+                    <ul class="list-unstyled">
+                        <li>
+                            <i class="las la-check"></i> Duration: {{ course.duration }}
+                        </li>
+                        <li>
+                            <i class="las la-check"></i> Total Commitment: {{ course.hour_commitment }} Hours Per Week
+                        </li>
+                        <li>
+                            <i class="las la-check"></i> Start Date: {{ course.start_date }}
+                        </li>
+                        <li>
+                            <i class="las la-check"></i> Cost: ₦{{ course.price }}
+                        </li>
+                        
+                    </ul>
+        
                     {% if is_registered %}
                         <div class="alert alert-success mt-3">
                             <i class="iconoir-check-circle"></i> You are already registered
                         </div>
                     {% else %}
-                        <a href="{% url 'web:payment_success' %}" class="theme-btn btn-sm d-block mb-3">Register Now</a>
+                        <div class="btns-group d-flex gap-3 mt-4">
+                            <a href="{% url 'web:payment_success' %}" class="theme-simple-btn">
+                                <i class="las la-shopping-cart"></i> Register Now
+                            </a>
+                            <a href="{% url 'web:download_brochure' course.id %}" class="theme-simple-btn">
+                                <i class="iconoir-download"></i> Download Brochure
+                            </a>
+                        </div>
                     {% endif %}
+                </div>
+            </div>
+        
+        </div>
+        
+    </div>
+</section>
 
-                    <a href="{% url 'web:download_brochure' course.id %}" class="theme-btn btn-sm btn-outline-secondary d-block">
-                        <i class="iconoir-download me-1"></i> Download Brochure
-                    </a>
+<!-- 📰 Course Details Section -->
+<section class="blog-details-area">
+    <div class="custom-container">
+        <div class="blog-details-body">
+            <div class="blog-details-inner">
+
+                <div class="blog-details-introduction">
+                    <h1>Introduction</h1>
+                    <p>{{ course.why_take_this_course }}</p>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% comment %} <section class="faq-area faq-style-2-area">
+    <div class="custom-container">
+        <div class="faq-inner">
+
+            <h5 class="section-subtitle">Curriculum</h5>
+            <h1 class="section-title">Course Curriculum</h1>
+
+            <div class="faq-items-box">
+                <div class="faq-col">
+                    <div id="accordion">
+                        {% for week in course.curriculum.all %}
+                        <div class="faq-box">
+                            <h5 class="card-header" id="heading{{ forloop.counter }}">
+                                <button data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}"
+                                    aria-expanded="false" aria-controls="collapse{{ forloop.counter }}">
+                                    <div class="icon">
+                                        <img src="{% static 'assets/imgs/question-icon.svg' %} " alt="Icon" >
+                                    </div> 
+                                    Week {{ week.week_number }}: {{ week.title }}
+                                </button>
+                            </h5>
+
+                            <div id="collapse{{ forloop.counter }}" class="collapse" aria-labelledby="heading{{ forloop.counter }}"
+                                data-parent="#accordion">
+                                <div class="card-body w-100">
+                                    {{ week.content }}
+                                </div>
+                            </div>
+                        </div>
+                        {% empty %}
+                        <div class="faq-box">
+                            <h5 class="card-header">
+                                <div class="icon">
+                                    <img src="assets/imgs/question-icon.svg" alt="Icon" />
+                                </div> 
+                                No curriculum uploaded yet.
+                            </h5>
+                        </div>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
 
         </div>
     </div>
+</section> {% endcomment %}
+
+
+
+
+<section class="how-we-do-area mb-2 mb-lg-5">
+    <div class="custom-container">
+        <div class="custom-row">
+            <img src="{% static 'assets/imgs/bg-shape-1.svg' %} " alt="Shape" class="animation-slide-left how-we-do-bg" />
+            <div class="how-we-do-left-content">
+                <div class="top">
+                    <h5 class="section-subtitle">Curriculum</h5>
+                    <h1 class="section-title">Course Curriculum</h1>
+                    {% comment %} <p>Save time and money with our powerful method.</p> {% endcomment %}
+                </div>
+            </div>
+            <div class="how-we-do-right-content">
+
+                {% for week_group in grouped_weeks %}
+                    <div class="how-we-do-items d-flex align-items-center justify-content-center {% if week_group|length == 1 %}single-card{% endif %}">
+                        {% for week in week_group %}
+                            <div class="how-we-do-card">
+                                <div class="circle-shape"></div>
+                                <div class="line-shape"></div>
+
+                                <div class="how-we-do-icon">
+                                    <img src="{% static 'assets/imgs/hwd-icon-1.svg' %}" alt="How we do" />
+                                </div>
+                                <div class="how-we-do-content">
+                                    <h4>{{ week.title }}</h4>
+                                    <p></p>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+
+
+                
+            
+            </div>
+        </div>
+    </div>
 </section>
+
 
 {% endblock %}

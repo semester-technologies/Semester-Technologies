@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Student, Course
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
@@ -139,19 +139,115 @@ def courses_list(request):
     return render(request, 'web/courses_list.html', context)
 
 
+def group_weeks(weeks):
+    total = len(weeks)
+    groups = []
+    index = 0
+
+    while total - index > 1:
+        remaining = total - index
+        if remaining > 5:
+            group_size = 4  # you can set max 4 or 5 based on your design
+        elif remaining == 5:
+            group_size = 4
+        elif remaining == 4:
+            group_size = 3
+        elif remaining == 3:
+            group_size = 2
+        else:  # remaining == 2
+            group_size = 1
+
+        groups.append(weeks[index: index + group_size])
+        index += group_size
+
+    if total - index == 1:
+        groups.append(weeks[index:])
+
+    return groups
 
 @login_required
 def course_detail(request, course_id):
-    course = Course.objects.get(pk=course_id)
-    is_saved = SavedCourse.objects.filter(user=request.user, course=course).exists()
-    is_registered = CourseRegistration.objects.filter(user=request.user, course=course, payment_status='completed').exists()
-    
+    course = get_object_or_404(Course, id=course_id)
+    weeks = list(course.curriculum.all())
+    grouped_weeks = group_weeks(weeks)
+
     context = {
         'course': course,
-        'is_saved': is_saved,
-        'is_registered': is_registered
+        'grouped_weeks': grouped_weeks,
     }
     return render(request, 'web/course_detail.html', context)
+
+
+
+
+
+# @login_required
+# def course_detail(request, course_id):
+#     course = get_object_or_404(Course, id=course_id)
+#     curriculum = course.curriculum.all()
+
+#     grouped_weeks = []
+#     weeks = list(curriculum)
+
+#     total_weeks = len(weeks)
+    
+#     if total_weeks <= 3:
+#         group_sizes = [2, 1][:total_weeks]
+#     elif total_weeks == 4:
+#         group_sizes = [2, 2]
+#     elif total_weeks == 5:
+#         group_sizes = [3, 2]
+#     elif total_weeks == 6:
+#         group_sizes = [3, 2, 1]
+#     elif total_weeks == 7:
+#         group_sizes = [3, 2, 2]
+#     elif total_weeks == 8:
+#         group_sizes = [3, 3, 2]
+#     elif total_weeks == 9:
+#         group_sizes = [4, 3, 2]
+#     elif total_weeks == 10:
+#         group_sizes = [4, 3, 3] 
+#     elif total_weeks == 11:
+#         group_sizes = [4, 4, 3]
+#     elif total_weeks == 12:
+#         group_sizes = [5, 4, 3]
+#     else:
+#         group_sizes = [5, 4, 3]  # Cap it
+
+#     index = 0
+#     for size in group_sizes:
+#         group = weeks[index: index + size]
+#         grouped_weeks.append(group)
+#         index += size
+
+#     context = {
+#         'course': course,
+#         'grouped_weeks': grouped_weeks,
+#     }
+#     return render(request, 'web/course_detail.html', context)
+
+
+
+
+
+
+
+# @login_required
+# def course_detail(request, course_id):
+#     course = Course.objects.get(pk=course_id)
+#     is_saved = SavedCourse.objects.filter(user=request.user, course=course).exists()
+#     is_registered = CourseRegistration.objects.filter(user=request.user, course=course, payment_status='completed').exists()
+    
+#     context = {
+#         'course': course,
+#         'is_saved': is_saved,
+#         'is_registered': is_registered
+#     }
+#     return render(request, 'web/course_detail.html', context)
+
+
+
+
 
 
 @login_required
